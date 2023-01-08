@@ -25,3 +25,28 @@ print('Learn Python', file=sys.stdout)
 print('%s %s'%('wer','werw'))
 print('{} {}'.format('wer','werd'))
 print('{1} {0}'.format('wer','werde'))
+# %s
+print('%10s'%('asdf'))
+print('%10s'%('123456789101112'))
+print('{:>10}'.format('123456789101112'))
+
+
+print('%-10s'%('asdf')) 
+print('%-10s'%('123456789101112'))
+print('{:10}'.format('123456789101112'))
+
+print('{:->10}'.format('12345'))
+print('{:^10}'.format('12345'))
+print('{:.^10}'.format('12345'))
+
+print('%.10s'%('123456789101112'))
+print('{:10.5}'.format('123456789101112'))
+
+# %d %f 똑같이 됨
+print('%f'%(3.123456789))
+print('{:f}'.format(3.123456789))
+
+print('%1.3f'%(3.123456789))
+print('{:1.3f}'.format(3.123456789))
+
+print('%08.3f'%(3.123456789))
