@@ -120,3 +120,14 @@ a.extend(b)  # extend는 따로 실행 시켜 줘야 하는듯?
 print('a.extend(b)=',a)
 print('b',b) # 왜 b도 같이 변화 시키냐...?
 
+#tuple > 수정과 삭제 불가능
+print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+a = (1,2,'asdf','wefgwe') # 팩킹
+print(a[2])
+(x1, x2, x3, x4) = a #괄호 없어도 됨
+print(x1, x2, x3, x4) # 언팩킹
+
+# dictionary
+
+
+
