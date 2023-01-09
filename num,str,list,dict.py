@@ -127,7 +127,33 @@ print(a[2])
 (x1, x2, x3, x4) = a #괄호 없어도 됨
 print(x1, x2, x3, x4) # 언팩킹
 
-# dictionary
+# dictionary (순서 무작위, 수정 삭제 가능)
+a = {'name':'kim', 'phone': '01012345678','birth':'991212'}
+b = {0: 'hello python'}
+d={
+    'name' :'kee',
+    'birth':'121212'
+}
+c = dict(
+    name='lee',
+    birth= 'seoul'
+)
+print('a.name=',a['name'])
+print('a.name = ', a.get('name'))
+print('a.name = ', a.get('name1')) #get함수는 자료형이 없어도 오류가 나지 않음 None이 뜰 뿐
 
+a['city'] = 'seoul' # 없을 땐 추가
+print(a)
+a['city'] = 'incheon' # 있으면 수정
+print (a)
+
+print('a -', a.keys())
+print('a -', list(a.keys()))
+
+print('a - ', a.values())
+print('a - ',a.items())
+
+print('a.pop(\'name\') -', a.pop('name')) # name 출력하고 삭제
+print('a -', a)
 
 
