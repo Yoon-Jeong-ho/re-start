@@ -95,3 +95,28 @@ a= 'z'
 print(ord(a))
 print(chr(122))
 
+# id
+a = [1 , 2, 3, 4, 5]
+b=a
+print('id a =',id(a))
+print('id b =',id(b))
+del a[2]
+print(a)
+a.append(3.3) # 맨 뒤에 추가
+print('append ',a)
+a.sort()   # 데이터가 많아지면 작업 시간 증가
+print('sort ',a)
+a.reverse()
+print('reverse ',a)
+a.insert (3,3) # 원하는 위치에 추가
+print('insert ', a)
+a.remove(3.3)
+print('remove',a)
+print('a.pop()=', a.pop())
+print('a=',a)
+print('a.count(1) =', a.count(1))
+print('b',b)
+a.extend(b)  # extend는 따로 실행 시켜 줘야 하는듯?
+print('a.extend(b)=',a)
+print('b',b) # 왜 b도 같이 변화 시키냐...?
+
