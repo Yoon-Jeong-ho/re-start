@@ -81,3 +81,17 @@ print(dir(im_str)) #__iter__ 가 있으면 반복 가능
 
 for i in im_str:
     print(i)
+
+#슬라이싱
+str_sl = "Nice python"
+print(str_sl[0:4])
+print(str_sl[0:4:2])
+print(str_sl[-5:])
+print(str_sl[1:-2])
+print(str_sl[-1])
+
+#아스키 코드
+a= 'z'
+print(ord(a))
+print(chr(122))
+
