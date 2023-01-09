@@ -156,4 +156,24 @@ print('a - ',a.items())
 print('a.pop(\'name\') -', a.pop('name')) # name 출력하고 삭제
 print('a -', a)
 
+#set 중복 허용하지 않음
+print('<<<<<<<<<<<<<')
+a=set([1,2,3,4,5,5,5])
+print('set a =',a)
+b=set([1,2,3])
+print('a & b =', a & b) #교집합 
+print('a & b =', a.intersection(b))
+print('a | b =', a | b) # 합집합 union
+print('a - b =', a - b) # 차집합 difference
+
+print('a & b =', a & b)
+
+# 중복 원소 확인 = isdisjoint > 중복 되면 false, 안되면 true
+print('a & b != ?', a.isdisjoint(b))
+
+# 부분 집합이냐 = issubset        a가 포함하냐 = issuperset
+print(' a is subset b ?', a.issubset(b))
+print('a is contain b ? = ',a.issuperset(b))
+
+# 추가, 제거 add remove(없는거 지우려고 하면 오류) discard( 오류 발생 x)
 
