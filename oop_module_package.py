@@ -57,4 +57,25 @@ del user1
 
 print('after',Warehouse.stock_num)
 
+#module : 함수, 클래스, 변수등을 모아놓은 파일
+
+def add(x,y):
+    return x+y
+
+def subtract(x,y):
+    return x-y
+
+def multiply(x,y):
+    return x*y
+
+def divide(x,y):
+    return x/y
+
+def power(x,y):
+    return x**y
+
+
+
+
+
 
