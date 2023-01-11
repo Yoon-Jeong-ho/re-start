@@ -74,6 +74,8 @@ def divide(x,y):
 def power(x,y):
     return x**y
 
+#package = 모듈들이 모여있는 파일
+#__init__.py : python 3.3 전에는 있어야 패키지로 인식
 
 
 
