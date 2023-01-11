@@ -93,3 +93,13 @@ def nested_func(num):
 
 nested_func(100)
 
+# Lambda
+
+qwer = lambda w,y:w**y
+print('lambda', qwer(5,5))
+
+def fu_la (x,y,funcc):
+    print(x*y*funcc(3,2))
+
+fu_la(6, 7, lambda w,e:w*e+e)
+
