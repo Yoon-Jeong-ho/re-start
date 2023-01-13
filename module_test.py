@@ -9,4 +9,3 @@ import oop_module_package   # print 출력을 막기 위해서는 원문에 가�
 
 print(oop_module_package.power(10,2))
 
-pycprint()
