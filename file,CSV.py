@@ -48,6 +48,42 @@ with open('test.txt','a') as f:
     print('asdf',file=f)
 
 
-    
+#csv    
+
+import csv
+
+with open('./resource/test1.csv','r') as f:
+    reader = csv.reader(f)
+    next(reader) # 헤드 생략 첫줄 생략
+    for c in reader :
+        print(c)
+        print(' : '.join(c))
+
+with open('./resource/test1.csv','r') as f:
+    reader = csv.reader(f,delimiter= ',')
+    for c in reader :
+        print(c)
+
+with open('./resource/test1.csv','r') as f:
+    reader = csv.DictReader(f)
+    for c in reader:
+        print(c)
+        for k,v in c.items():
+            print(k,v)
+
+w= [[1,2,3],[1,3,5],[2,3,4],[5,6,7],[8,9,0]]
+
+with open('./resource/test2.csv','w') as f:
+    wt = csv.writer(f)
+    for v in w:
+        wt.writerow(v)
+
+
+with open('./resource/write2.csv','w') as f:
+    fields = ['one','two','three']
+    wt = csv.DictWriter(f, fieldnames=fields)
+    wt.writeheader()
+    for v in w:
+        wt.writerow({'one': v[0], 'two' : v[1], 'three':v[2]})
 
 
