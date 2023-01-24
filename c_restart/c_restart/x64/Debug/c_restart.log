@@ -1,0 +1,4 @@
+﻿  hello.c
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(21,10): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'size_t'입니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(21,10): message : 이 인수는 버퍼 크기로 사용됩니다.
+  c_restart.vcxproj -> C:\Users\k\OneDrive\문서\re-start\c_restart\x64\Debug\c_restart.exe
