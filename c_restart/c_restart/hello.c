@@ -1,5 +1,12 @@
 #include <stdio.h>
 #include <time.h>
+
+struct friends {
+	char * name;
+	int age;
+
+};
+
 void p(int num);
 void qwer (int *a);
 
@@ -62,6 +69,26 @@ int main(void)
 	int d[2][4][8];
 	d[0][1][2] = 3;
 	printf("%d %d %d %d\n", *d,d,d[0][0][0], d[0][1][2]);
+
+	struct friends kko;
+	kko.name = "kkobbo";
+	kko.age = 26;
+	printf("name : %8s age : %d \n", kko.name, kko.age);
+
+	struct friends yoon = {"jh", 25};
+	printf("name : %8s age : %d \n", yoon.name, yoon.age);
+	// 구조체 배열도 가능
+	struct friends sp[2] = {
+		{"young", 24} ,
+		{"hea" , 22}
+	};
+	printf("name : %8s age : %d \n", sp[0].name, sp[0].age);
+	printf("name : %8s age : %d \n", sp[1].name, sp[1].age);
+
+	struct friends * heck;
+	heck = &yoon;
+	printf("name : %8s age : %d \n", (*heck).name, (*heck).age); // *의 지정을 위해 괄호 필수!
+	printf("name : %8s age : %d \n", heck->name, heck->age);   // 이렇게 변동도 가능!
 
 
 
