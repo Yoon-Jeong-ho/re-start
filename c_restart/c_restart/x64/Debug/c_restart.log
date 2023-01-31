@@ -11,5 +11,9 @@ C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(54,9): warning C
 C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(54,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int **' 형식의 인수 3과(와) 충돌합니다.
 C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(54,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 4의 형식이 'int *'입니다.
 C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(54,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 4과(와) 충돌합니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(64,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int (*)[8]'입니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(64,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int (*)[8]' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(64,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int (*)[4][8]'입니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(64,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int (*)[4][8]' 형식의 인수 2과(와) 충돌합니다.
 C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(53,1): warning C4047: '초기화 중': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
   c_restart.vcxproj -> C:\Users\k\OneDrive\문서\re-start\c_restart\x64\Debug\c_restart.exe
