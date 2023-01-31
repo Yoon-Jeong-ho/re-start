@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <time.h>
 void p(int num);
+void qwer (int *a);
 
 int main(void)
 {
@@ -41,11 +43,30 @@ int main(void)
 
 	p(3);
 
+	printf("c에서 주소는 &를 붙이면 된다. age의 주소는 %d입니다.\n", &age);
+
+	int *a;
+	a = &age;
+	printf("%d %d %d\n",age,a,*a); // age 값, age 주소, age 값
+	*a = *a - 1;
+	printf("%d %d %d\n", age, a, *a);  // &는 주소로 *은 값으로
+	int b = a;
+	printf("%d %d %d %d %d\n",a,b, &a, &b,*a); // age주소, a와 같은 값인 b, a주소(age주소의 주소), b의 주소 값은 a와 같아도 주소는 다름,  age)
+
+	int c[3] = { 1,2,3 };
+	qwer(c);
+	printf("%d", c[2]);
+
+
 	return 0;
 }
 
 void p(int num) {
 
 	printf("숫자는 %d입니다", num);
-	return 0;
+
 }	
+
+void qwer(int *c) {
+	c[2] = 4;
+}
