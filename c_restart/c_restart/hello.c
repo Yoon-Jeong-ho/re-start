@@ -48,4 +48,4 @@ void p(int num) {
 
 	printf("숫자는 %d입니다", num);
 	return 0;
-}
+}	
