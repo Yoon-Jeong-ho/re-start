@@ -1,5 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX 10000
 #include <stdio.h>
 #include <time.h>
+
+
 
 struct friends {
 	char * name;
@@ -89,6 +93,30 @@ int main(void)
 	heck = &yoon;
 	printf("name : %8s age : %d \n", (*heck).name, (*heck).age); // *의 지정을 위해 괄호 필수!
 	printf("name : %8s age : %d \n", heck->name, heck->age);   // 이렇게 변동도 가능!
+
+	//typedef float 실수 ; typedef는 이미 있는 것을 다른 이름에도 적용할 때 사용 (실수 i = 3.23f) 로 사용 가능
+	typedef struct friends 친구정보;
+	친구정보 상;
+	상.name = "huk";
+	상.age = 25;
+	printf("name : %8s age : %d \n", 상.name, 상.age);
+
+	// 파일 입출력 > fputs, fgets, fprintf, fscanf
+	char line[MAX];
+	FILE *file = fopen("C:\\Users\\k\\OneDrive\\문서\\re-start\\c_restart\\test.txt","wb");
+	if (file == NULL) {
+		printf("열기 실패");
+		return 1;
+	}
+	fputs("이게 잘 저장이 될까? \n", file);
+	fputs("저장이 되면 밑에 나올꺼야  \n", file);
+	fclose(file);
+	FILE* files = fopen("C:\\Users\\k\\OneDrive\\문서\\re-start\\c_restart\\test.txt", "rb");
+	while (fgets(line, MAX, files) != NULL) {
+		printf("%s", line);
+	}
+	fclose(files);
+
 
 
 
