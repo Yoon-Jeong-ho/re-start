@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 
 #include<stdio.h>
+#include<stdlib.h>
 
 int sum(int n);
 
@@ -16,6 +17,13 @@ struct time {
 struct test {
 	char name[9];
 	int score;
+};
+
+struct gread {
+	char name[7];
+	int ko;
+	int en;
+	int ma;
 };
 
 int main_1() {
@@ -79,7 +87,7 @@ int main_5() {
 	return 0;
 }
 
-int main() {
+int main_6() {
 	struct test student[5];
 	int low[5], ave=0;
 	for (int i = 0; i < 5; i++) {
@@ -93,6 +101,48 @@ int main() {
 		}
 	}
 	return 0;
+}
+
+int main_7() {
+	int* num1, * num2, N;
+	scanf("%d", &N);
+	num1 = (int*)malloc(sizeof(int) * N);
+	num2 = (int*)malloc(sizeof(int) * N);
+	for (int i = 0; i < N; i++) {
+		scanf("%d", &num1[i]);
+	}
+	for (int i = 0; i < N; i++) {
+		scanf("%d", &num2[i]);
+		num1[N - 1 - i] += num2[i];
+	}
+	for (int i = 0; i < N; i++) printf(" %d", num1[i]);
+	free(num1);
+	free(num2);
+	return 0;
+}
+
+int main_8() {
+	int N;
+	double* ave;
+	scanf("%d", &N);
+	ave = (double*)malloc(sizeof(double) * N);
+	struct gread *student;
+	student = (struct gread*)malloc(N * sizeof(struct gread));
+	for (int i = 0; i < N; i++) {
+		scanf("%s %d %d %d", (student+i)->name, &(student + i)->ko, &(student + i)->en, &(student + i)->ma);
+		ave[i] = (double)((student + i)->ko + (student + i)->en + (student + i)->ma) / 3;
+	}
+	for (int i = 0; i < N; i++) {
+		printf("%s %.1f", (student + i)->name, ave[i]);
+		if ((student + i)->ko >= 90 || (student + i)->en >= 90 || (student + i)->ma >= 90) {
+			printf(" GREAT");
+		}
+		if ((student + i)->ko <70 || (student + i)->en <70 || (student + i)->ma <70) {
+			printf(" BAD");
+		}
+		printf("\n");
+	}
+	return 0;	
 }
 
 int sum(int n) {
