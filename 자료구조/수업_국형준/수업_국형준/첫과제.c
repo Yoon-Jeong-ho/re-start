@@ -145,6 +145,15 @@ int main_8() {
 	return 0;	
 }
 
+int main() {
+	printf("/%d/\n", 126);
+	printf("/%2d/\n", 126);
+	printf("/%10d/\n", 126);
+	printf("/%-10d/\n", 126);
+
+	return 0;
+}
+
 int sum(int n) {
 	int total= 0;
 	for (int i = 1;i < n + 1; i++) total += i;
