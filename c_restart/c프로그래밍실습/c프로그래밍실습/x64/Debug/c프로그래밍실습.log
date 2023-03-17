@@ -1,0 +1,6 @@
+﻿  3주차.c
+C:\Users\k\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\3주차.c(38,18): warning C4101: 'e' :참조되지 않은 지역 변수입니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\3주차.c(38,9): warning C4101: 'b' :참조되지 않은 지역 변수입니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\3주차.c(38,12): warning C4101: 'c' :참조되지 않은 지역 변수입니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\3주차.c(38,15): warning C4101: 'd' :참조되지 않은 지역 변수입니다.
+  c프로그래밍실습.vcxproj -> C:\Users\k\OneDrive\문서\re-start\c_restart\c프로그래밍실습\x64\Debug\c프로그래밍실습.exe

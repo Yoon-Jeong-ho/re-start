@@ -1,12 +1,17 @@
 #define _CRT_SECURE_NO_WARNINGS 
+
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
+#include<Windows.h>
+
 
 int sum(int n);
 
-void ABC(int* num, int k);
+void ABBC(int* num, int k);
 
 void swap(int *a, int *b);
+
 
 struct time {
 	int hour;
@@ -37,7 +42,7 @@ int main_1() {
 int main_2() {
 	int num[10];
 	for (int i = 0; i < 10; i++) scanf_s("%d", &num[i]);
-	for (int k = 0; k < 9; k++) ABC(num, k);
+	for (int k = 0; k < 9; k++) ABBC(num, k);
 	for (int i = 0; i < 10; i++) printf(" %d", num[i]);
 	return 0;
 }
@@ -145,14 +150,6 @@ int main_8() {
 	return 0;	
 }
 
-int main() {
-	printf("/%d/\n", 126);
-	printf("/%2d/\n", 126);
-	printf("/%10d/\n", 126);
-	printf("/%-10d/\n", 126);
-
-	return 0;
-}
 
 int sum(int n) {
 	int total= 0;
@@ -160,7 +157,7 @@ int sum(int n) {
 	return total;
 }
 
-void ABC(int* num, int k) {
+void ABBC(int* num, int k) {
 	for (int i = k; i < 10; i++) {
 		if (num[i] > num[k]) {
 			int tmp;
