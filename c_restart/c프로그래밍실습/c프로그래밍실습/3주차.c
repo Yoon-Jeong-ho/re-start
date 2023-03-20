@@ -84,9 +84,17 @@ int main_4_6() {
 	return 0;
 }
 
-int main() {
+int main_4_7() {
 	char a;
 	scanf("%c", &a);
 	printf("%d",a>= 'A'&& a<='z');
+	return 0;
+}
+
+int main() {
+	int x = 5;
+	int y = 3;
+
+	printf("%d", !(x > 3 && x < 10));
 	return 0;
 }
