@@ -91,10 +91,81 @@ int main_4_7() {
 	return 0;
 }
 
-int main() {
-	int x = 5;
-	int y = 3;
+int main_4_0_1() {
+	int N, num = 1; 
 
-	printf("%d", !(x > 3 && x < 10));
+	scanf("%d", &N); //정수입력
+	num = (N%3==0 && N %5  == 0)*15 + // 15의 배수만 찾기
+		(N % 3 == 0 && N % 5 != 0) * 3 +  // 3의 배수만 찾기
+		(N % 3 != 0 && N % 5 == 0) * 5 +  // 5의 배수만 찾기
+		(N % 3 != 0 && N % 5 != 0) * N; // 3,5의 배수도 아닌 정수의 값(N) num에 넣기
+
+	printf("%d is a multiple of %d.", N, num);
+	
+	return 0;
+}
+
+int main_4_0_2() {
+	int year;
+	char day='C';
+	scanf("%d", &year);
+	day = (year % 4 == 0 && year % 100 != 0) ? 'L' : 'C';//4로 나누어 떨어지고, 100으로는 안 나누어 떨어지는 년도
+	day = year % 400 == 0 ? 'L' : 'C'; //위의 식에서 100으로 나누어 떨어진 숫자들 중에 400으로 나누어 떨어지는 숫자 모음
+	
+	printf("%c", day);
+	return 0;
+}
+
+int main_4_0_3() {
+	int num1, num2, num3;
+	char result;
+	scanf("%d %d %d", &num1, &num2, &num3);
+	num1 /= 100; //백의 자리 구하기
+	num2 /= 100;
+	num3 /= 100;
+	result = (num1 == num2 || num2 == num3 || num1 == num3) ? 'D' : 'S'; //두가지와 세가지 모두 같은 경우를 일단 먼저 'D'로 둔다
+	result = (num1 == num2 && num2 == num3) ? 'T' : result; // 여기서 세가지가 모두 같은 경우를 'T'로 두어서 두가지가 같은 경우와 차별점을 둔다
+	printf("%c", result);
+
+	return 0;
+}
+
+int main_4_0_4() {
+	int num, result = 0,a;
+	scanf("%d", &num);
+	a = num % 10; //a라는 변수에 입력받은 수 1의 자리 넣기
+	result = a * 1000; // 1의자리를 천의 자리로 바꾸기
+	a = num / 10 % 10; //a라는 변수에 입력받은 수 10의 자리 넣기
+	result = result + a * 100; // 입력받은 10의자리 100의 자리로 바꾸기
+	a = num / 100 % 10;//a라는 변수에 입력받은 수 100의 자리 넣기
+	result = result + a * 10; // 입력받은 100의자리 10의자리로 바꾸기
+	a = num / 1000 % 10; // 입력받은 수의 1000의 자리 a에 넣기
+	result = result + a; //1000의자리 수 1의 자리에 넣기
+	result = result - num; // 빼서 결과값 만들기
+	result = result > 0 ? result : -result; // 0보다 크면 원래값, -값이면 - 붙여서 양수 만들기
+	printf("%d", result);
+	return 0;
+}
+
+int main_4_0_5() {
+	int num,num1, num2, num3, result;
+	scanf("%d", &num);
+	num1 = num % 10; // 1의자리
+	num2 = num / 10 % 10;  // 10의자리
+	num3 = num / 100 % 10; // 100의자리
+	result = (num1 == num2 || num2 == num3 || num1 == num3) ? 2 : 1; //두가지와 세가지 모두 같은 경우를 일단 먼저 2로 둔다
+	result = (num1 == num2 && num2 == num3) ? 3 : result; // 여기서 세가지가 모두 같은 경우를 3로 두어서 두가지가 같은 경우와 차별점을 둔다
+	printf("%d", result);
+
+	return 0;
+}
+
+int main_4_0_5() {
+	int num1, num2, num3,result;
+	scanf("%d %d %d", &num1, &num2, &num3);
+	result = ((num1 > num2 && num1 < num3) || (num1 < num2&& num1 > num3)) ? num1 : 0; // 1num이 중앙값인경우 좌우 값을 2,3 번갈아서 한다
+	result = ((num1 > num2 && num2 > num3) || (num1 < num2&& num2 < num3)) ? num2 : result;// 2num이 중앙값인경우 좌우 값을 1,3 번갈아서 한다 아닐 경우 이전의 결과값을 그대로 가지고 온다
+	result = ((num3 > num2 && num1 > num3) || (num3 < num2&& num1 < num3)) ? num3 : result;// 3num이 중앙값인경우 좌우 값을 2,1 번갈아서 한다 아닐 경우 이전의 결과값을 그대로 가지고 온다
+	printf("%d", result); // 출력
 	return 0;
 }

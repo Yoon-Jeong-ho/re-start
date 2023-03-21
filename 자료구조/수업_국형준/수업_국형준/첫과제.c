@@ -5,173 +5,121 @@
 #include<time.h>
 #include<Windows.h>
 
+int countOnesButSlow(int** a, int n);
+int countOnes(int** arr, int n);
 
-int sum(int n);
+int main() {
+	int n1 = 10000, n2 = 20000, n3 = 30000, ** arr, kTotal1 = 0, kTotal2 = 0, kTotal3 = 0,num1,num2, k,oness1, oness2, oness3, onesf1, onesf2, onesf3;
+	double  cputimes1, cputimes2, cputimes3, cputimef1, cputimef2, cputimef3;
+	srand(time(NULL)); // 시간 초기화하여 랜덤값 진짜 랜덤으로 만들기
+	arr = (int**)malloc(sizeof(int*) * n1);
+	for (int i = 0; i < n1; i++) arr[i] = (int*)malloc(sizeof(int) * n1); // 동적할당하여 크기 만들어줌
+	k = n1;
+	LARGE_INTEGER ticksPerSec;
+	LARGE_INTEGER start, end, diff;
 
-void ABBC(int* num, int k);
-
-void swap(int *a, int *b);
-
-
-struct time {
-	int hour;
-	int min;
-	int sec;
-};
-
-struct test {
-	char name[9];
-	int score;
-};
-
-struct gread {
-	char name[7];
-	int ko;
-	int en;
-	int ma;
-};
-
-int main_1() {
-	int n, total = 0;
-	scanf_s("%d", &n);
-	for (int i = 1; i < n + 1; i++) total += sum(i);
-	printf("%d", total);
-	return 0;
-}
-
-int main_2() {
-	int num[10];
-	for (int i = 0; i < 10; i++) scanf_s("%d", &num[i]);
-	for (int k = 0; k < 9; k++) ABBC(num, k);
-	for (int i = 0; i < 10; i++) printf(" %d", num[i]);
-	return 0;
-}
-
-int main_3() {
-	int num[50], N,a,b;
-	scanf_s("%d", &N);
-	for (int i = 0; i < N; i++) scanf_s("%d", &num[i]);
-	scanf_s("%d %d", &a, &b);
-	swap(&num[a], &num[b]);
-	for (int i = 0; i < N; i++) printf(" %d", num[i]);
-	return 0;
-}
-
-int main_4() {
-	char str[100],tmp;
-	int size = 0;
-	scanf("%s", str);
-	while (str[size]) size++;
-	for (int i = 0; i < size;i++) {
-		printf("%s\n", str);
-		tmp = str[0];
-		for (int j = 0; j < size-1; j++) {
-			str[j] = str[j + 1];
+	QueryPerformanceFrequency(&ticksPerSec);
+	for (int i = 0; i < n1; i++) {
+		kTotal1 = kTotal1 + k; // 실제 갯수 집어넣기
+		for (int j = 0; j < n1; j++) {
+			if (j < k) arr[i][j] = 1; // k만큼 1 집어넣기
+			else arr[i][j] = 0 ; // k넘어가면 0집어넣기
 		}
-		str[size - 1] = tmp;
+		num1 = k * 0.9; // 랜덤 시작값
+		num2 = k * 0.1; // 랜덤 끝값
+		if (num2 == 0) k = num1; // 0오류 없애기
+		else k = ((((long)rand() << 15) | rand()) % num2) + num1; // 0.9k ~ 1.0k로 설정
 	}
-	return 0;
-}
-
-int main_5() {
-	struct time first, second,result;
-	scanf("%d %d %d", &first.hour, &first.min, &first.sec);
-	scanf("%d %d %d", &second.hour, &second.min, &second.sec);
-	result.hour = second.hour - first.hour;
-	result.min = second.min - first.min;
-	result.sec = second.sec - first.sec;
-	if (result.min < 0) {
-		result.hour--;
-		result.min += 60;
-	}
-	if (result.sec < 0) {
-		result.min--;
-		result.sec += 60;
-	}
-	printf("%d %d %d", result.hour, result.min, result.sec);
-	return 0;
-}
-
-int main_6() {
-	struct test student[5];
-	int low[5], ave=0;
-	for (int i = 0; i < 5; i++) {
-		scanf("%s %d", student[i].name, &student[i].score);
-		ave += student[i].score;
-	}
-	ave = ave / 5;
-	for (int i = 0; i < 5;i++) {
-		if (student[i].score < ave) {
-			printf("%s\n", student[i].name);
+	QueryPerformanceCounter(&start); // 느린버전 1만번 계산 시작
+	oness1 = countOnesButSlow(arr, n1); // 느린버전 1만번 실행
+	QueryPerformanceCounter(&end); // 느린버전 1만번 끝
+	diff.QuadPart = end.QuadPart - start.QuadPart;
+	cputimes1 = ((double)diff.QuadPart / (double)ticksPerSec.QuadPart);
+	QueryPerformanceCounter(&start); // 빠른버전 1만번 계산 시작
+	onesf1 = countOnes(arr, n1); // 빠른버전 1만번 실행
+	QueryPerformanceCounter(&end); // 빠른버전 1만번 끝
+	diff.QuadPart = end.QuadPart - start.QuadPart;
+	cputimef1 = ((double)diff.QuadPart / (double)ticksPerSec.QuadPart);
+	free(arr);
+	arr = (int**)malloc(sizeof(int*) * n2);
+	for (int i = 0; i < n2; i++) arr[i] = (int*)malloc(sizeof(int) * n2); // 동적할당하여 크기 만들어줌 2만번
+	k = n2;
+	for (int i = 0; i < n2; i++) {
+		kTotal2 = kTotal2 + k; // 실제 갯수 집어넣기
+		for (int j = 0; j < n2; j++) {
+			if (j < k) arr[i][j] = 1; // k만큼 1 집어넣기
+			else arr[i][j] = 0; // k넘어가면 0집어넣기
 		}
+		num1 = k * 0.9; // 랜덤 시작값
+		num2 = k * 0.1; // 랜덤 끝값
+		if (num2 == 0) k = num1; // 0오류 없애기
+		else k = ((((long)rand() << 15) | rand()) % num2) + num1; // 0.9k ~ 1.0k로 설정
 	}
+	QueryPerformanceCounter(&start); // 느린버전 2만번 계산 시작
+	oness2 = countOnesButSlow(arr, n2); // 느린버전 2만번 실행
+	QueryPerformanceCounter(&end); // 느린버전 2만번 끝
+	diff.QuadPart = end.QuadPart - start.QuadPart;
+	cputimes2 = ((double)diff.QuadPart / (double)ticksPerSec.QuadPart);
+	QueryPerformanceCounter(&start); // 빠른버전 2만번 계산 시작
+	onesf2 = countOnes(arr, n2); // 빠른버전 2만번 실행
+	QueryPerformanceCounter(&end); // 빠른버전 2만번 끝
+	diff.QuadPart = end.QuadPart - start.QuadPart;
+	cputimef2 = ((double)diff.QuadPart / (double)ticksPerSec.QuadPart);
+	free(arr);
+	arr = (int**)malloc(sizeof(int*) * n3);
+	for (int i = 0; i < n3; i++) arr[i] = (int*)malloc(sizeof(int) * n3); // 동적할당하여 크기 만들어줌 3만번
+	k = n3;
+	for (int i = 0; i < n3; i++) {
+		kTotal3 = kTotal3 + k; // 실제 갯수 집어넣기
+		for (int j = 0; j < n3; j++) {
+			if (j < k) arr[i][j] = 1; // k만큼 1 집어넣기
+			else arr[i][j] = 0; // k넘어가면 0집어넣기
+		}
+		num1 = k * 0.9; // 랜덤 시작값
+		num2 = k * 0.1; // 랜덤 끝값
+		if (num2 == 0) k = num1; // 0오류 없애기
+		else k = ((((long)rand() << 15) | rand()) % num2) + num1; // 0.9k ~ 1.0k로 설정
+	}
+	QueryPerformanceCounter(&start); // 느린버전 3만번 계산 시작
+	oness3 = countOnesButSlow(arr, n3); // 느린버전 3만번 실행
+	QueryPerformanceCounter(&end); // 느린버전 3만번 끝
+	diff.QuadPart = end.QuadPart - start.QuadPart;
+	cputimes3 = ((double)diff.QuadPart / (double)ticksPerSec.QuadPart);
+	QueryPerformanceCounter(&start); // 빠른버전 3만번 계산 시작
+	onesf3 = countOnes(arr, n3); // 빠른버전 3만번 실행
+	QueryPerformanceCounter(&end); // 빠른버전 3만번 끝
+	diff.QuadPart = end.QuadPart - start.QuadPart;
+	cputimef3 = ((double)diff.QuadPart / (double)ticksPerSec.QuadPart);
+	free(arr);
+	printf("%d %d %.12f\n", kTotal3, onesf3, cputimef3); // 빠른버전 30000번
+	printf("%d %d %.12f\n", kTotal1, onesf1, cputimef1); // 빠른버전 10000번
+	printf("%d %d %.12f\n", kTotal2, onesf2, cputimef2); // 빠른버전 20000번
+	printf("%d %d %.12f\n", kTotal3, oness3, cputimes3); // 느린버전 30000번
+	printf("%d %d %.12f\n", kTotal1, oness1, cputimes1); // 느린버전 10000번
+	printf("%d %d %.12f\n", kTotal2, oness2, cputimes2); // 느린버전 20000번
+	
+	
 	return 0;
 }
 
-int main_7() {
-	int* num1, * num2, N;
-	scanf("%d", &N);
-	num1 = (int*)malloc(sizeof(int) * N);
-	num2 = (int*)malloc(sizeof(int) * N);
-	for (int i = 0; i < N; i++) {
-		scanf("%d", &num1[i]);
-	}
-	for (int i = 0; i < N; i++) {
-		scanf("%d", &num2[i]);
-		num1[N - 1 - i] += num2[i];
-	}
-	for (int i = 0; i < N; i++) printf(" %d", num1[i]);
-	free(num1);
-	free(num2);
-	return 0;
-}
-
-int main_8() {
-	int N;
-	double* ave;
-	scanf("%d", &N);
-	ave = (double*)malloc(sizeof(double) * N);
-	struct gread *student;
-	student = (struct gread*)malloc(N * sizeof(struct gread));
-	for (int i = 0; i < N; i++) {
-		scanf("%s %d %d %d", (student+i)->name, &(student + i)->ko, &(student + i)->en, &(student + i)->ma);
-		ave[i] = (double)((student + i)->ko + (student + i)->en + (student + i)->ma) / 3;
-	}
-	for (int i = 0; i < N; i++) {
-		printf("%s %.1f", (student + i)->name, ave[i]);
-		if ((student + i)->ko >= 90 || (student + i)->en >= 90 || (student + i)->ma >= 90) {
-			printf(" GREAT");
-		}
-		if ((student + i)->ko <70 || (student + i)->en <70 || (student + i)->ma <70) {
-			printf(" BAD");
-		}
-		printf("\n");
-	}
-	return 0;	
-}
 
 
-int sum(int n) {
-	int total= 0;
-	for (int i = 1;i < n + 1; i++) total += i;
-	return total;
-}
-
-void ABBC(int* num, int k) {
-	for (int i = k; i < 10; i++) {
-		if (num[i] > num[k]) {
-			int tmp;
-			tmp = num[i];
-			num[i] = num[k];
-			num[k] = tmp;
+int countOnesButSlow(int** arr, int n) {
+	int max = 0;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (arr[i][j] == 1) max++; // 1있으면 max값 증가
 		}
 	}
+	return max;
 }
-
-void swap(int* a, int* b) {
-	int tmp;
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+int countOnes(int** arr, int n) {
+	int max = 0;
+	int j = n-1;
+	for (int i = 0; i <n; i++) {
+		while (j > 0 && arr[j][i] == 0) j = j - 1; // 없으면 계속 내려간다.
+		if (arr[j][i] == 1) max = max + j + 1; // 0인경우를 더하는 것을 방지하기 위해 1조건을 넣음
+		else break; // 빠른 종료를 위해 0이면 브레이크 문을 넣었음
+	}
+	return max;
 }
-

@@ -35,7 +35,7 @@ int main_2_2() {
 	return 0;
 }
 
-int main() {
+int main_2_3() {
 	int n, * X, * A,* B;
 	scanf("%d", &n);
 	X = (int*)malloc(sizeof(int) * n);

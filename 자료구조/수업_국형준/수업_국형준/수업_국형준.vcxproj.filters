@@ -15,10 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="첫과제.c">
+    <ClCompile Include="첫실습.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="두번째.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="세번째실습.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="첫과제.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
