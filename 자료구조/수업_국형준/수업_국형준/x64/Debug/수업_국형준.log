@@ -1,9 +1,0 @@
-﻿  첫과제.c
-C:\Users\k\OneDrive\문서\re-start\자료구조\수업_국형준\수업_국형준\첫과제.c(14,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\k\OneDrive\문서\re-start\자료구조\수업_국형준\수업_국형준\첫과제.c(28,12): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\k\OneDrive\문서\re-start\자료구조\수업_국형준\수업_국형준\첫과제.c(29,12): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\k\OneDrive\문서\re-start\자료구조\수업_국형준\수업_국형준\첫과제.c(53,12): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\k\OneDrive\문서\re-start\자료구조\수업_국형준\수업_국형준\첫과제.c(54,12): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\k\OneDrive\문서\re-start\자료구조\수업_국형준\수업_국형준\첫과제.c(78,12): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\k\OneDrive\문서\re-start\자료구조\수업_국형준\수업_국형준\첫과제.c(79,12): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  수업_국형준.vcxproj -> C:\Users\k\OneDrive\문서\re-start\자료구조\수업_국형준\x64\Debug\수업_국형준.exe
