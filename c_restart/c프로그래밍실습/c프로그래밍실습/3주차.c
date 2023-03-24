@@ -160,7 +160,7 @@ int main_4_0_5() {
 	return 0;
 }
 
-int main() {
+int main_04_0_05() {
 	int num1, num2, num3,result;
 	scanf("%d %d %d", &num1, &num2, &num3);
 	result = ((num1 > num2 && num1 < num3) || (num1 < num2&& num1 > num3)) ? num1 : 0; // 1num이 중앙값인경우 좌우 값을 2,3 번갈아서 한다
