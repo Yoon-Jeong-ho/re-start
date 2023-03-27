@@ -71,7 +71,6 @@ while True:
     
     # 프레임을 HSV 색 공간으로 변환합니다.
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    
     # 라바콘을 추출합니다.
     lower_red = np.array([0, 70, 50])
     upper_red = np.array([10, 255, 255])
@@ -86,7 +85,7 @@ while True:
     if contours:
         # 가장 큰 외곽선을 선택합니다.
         contour = max(contours, key=cv2.contourArea)
-        
+
         # 외곽선의 중심점을 계산합니다.
         M = cv2.moments(contour)
         center = (int(M['m10']/M['m00']), int(M['m01']/M['m00']))

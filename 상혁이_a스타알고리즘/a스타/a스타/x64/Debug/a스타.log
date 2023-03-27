@@ -1,0 +1,3 @@
+﻿  apdlsdlek.c
+C:\Users\k\OneDrive\문서\re-start\상혁이_a스타알고리즘\a스타\a스타\apdlsdlek.c(203,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  a스타.vcxproj -> C:\Users\k\OneDrive\문서\re-start\상혁이_a스타알고리즘\a스타\x64\Debug\a스타.exe
