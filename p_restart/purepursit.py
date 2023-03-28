@@ -12,10 +12,10 @@ cemeraAngle = math.radians(30) # 카메라 기울은 각도
 cemeraLeftAngle = math.radians(20) # 카메라 좌측 시야 각도 
 cemeraTopAngle = math.radians(15) # 카메라 위측 시야 각도
 xframe = 1800 # 프레임 총 x좌표수
-yframe = 600 # 프레임 총y좌표 수
+#yframe = 600 # 프레임 총y좌표 수
 #x = 1500 # 목표로 하는 x좌표
-y = 200 # 목표로 하는 y좌표
-yPointDistance = 10 # 아직 이건 못 구하겠네 근데 y좌표는 어차피 거리라서 lookAHeadDistance로 비율 따지면 크게 필요 없을듯? 나중에 레이더 오면 값 집어 넣어도 될듯
+#y = 200 # 목표로 하는 y좌표
+#yPointDistance = 10 # 아직 이건 못 구하겠네 근데 y좌표는 어차피 거리라서 lookAHeadDistance로 비율 따지면 크게 필요 없을듯? 나중에 레이더 오면 값 집어 넣어도 될듯
 distanceAngle = math.atan(2*abs(xframe/2-x)*math.tan(cemeraLeftAngle)/xframe) # x 좌표를 통해 자동차와 목표 사이의 각도 측정
 
 #speed = 00  # 현재 속도 m/s 입력 받아야됨

@@ -8,7 +8,7 @@
 int countOnesButSlow(int** a, int n);
 int countOnes(int** arr, int n);
 
-int main() {
+int first_h_w_01_main() {
     int n1 = 10000, n2 = 20000, n3 = 30000, ** arr, kTotal1 = 0, kTotal2 = 0, kTotal3 = 0, num1, num2, k, oness1, oness2, oness3, onesf1, onesf2, onesf3;
     double  cputimes1, cputimes2, cputimes3, cputimef1, cputimef2, cputimef3;
     srand(time(NULL)); // 시간 초기화하여 랜덤값 진짜 랜덤으로 만들기
