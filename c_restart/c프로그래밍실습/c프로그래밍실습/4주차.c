@@ -79,7 +79,7 @@ int main_5_0_6() {
 	printf("%d %d", num[0], num[2]);
 	return 0;
 }
-int main() {
+int main_5_0_7() {
 	int a = 2;
 	if (a = 3) printf("%d", a);
 	a = 0;
