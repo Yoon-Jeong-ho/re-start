@@ -14,7 +14,7 @@ struct friends {
 void p(int num);
 void qwer (int *a);
 
-int main(void)
+int main_124(void)
 {
 	int age = 14;
 	

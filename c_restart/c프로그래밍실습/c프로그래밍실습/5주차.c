@@ -220,17 +220,17 @@ int main_02_01_01() {
 	scanf("%d %d %d", &ko, &en, &ma);
 	ev = (ko + ma + en) / 3.0;
 	if (ev >= 90) printf("A"); // 평균이 몇점 이상일 경우 학점 나누기
-	else if (ev >= 80) printf("B");
-	else if (ev >= 70) printf("C");
-	else if (ev >= 60) printf("D");
-	else printf("F");
-	printf("\n"); // 위에 전부 줄 넘김을 안해줘서 삼
-	if (ko > en && ko > ma) printf("max: %d\n", ko); // 최대일 경우
-	else if (en > ko && en > ma) printf("max: %d\n", en);
-	else printf("max: %d\n", ma);
-	if (ko < en && ko < ma) printf("min: %d\n", ko); // 최소일 경우
-	else if (en < ko && en < ma) printf("min: %d\n", en);
-	else printf("min: %d\n", ma);
+	else if (ev >= 80) printf("B"); // B
+	else if (ev >= 70) printf("C"); // C
+	else if (ev >= 60) printf("D"); // D
+	else printf("F"); // 60미만이면 F학점
+	printf("\n"); // 위에 전부 줄 넘김을 안해줘서 넣어줬음
+	if (ko > en && ko > ma) printf("max: %d\n", ko); // kr가 최대일 경우
+	else if (en > ko && en > ma) printf("max: %d\n", en); // en이 최대일 경우
+	else printf("max: %d\n", ma); // ma가 최대일경우
+	if (ko < en && ko < ma) printf("min: %d\n", ko); // ko가 최소일 경우
+	else if (en < ko && en < ma) printf("min: %d\n", en); // en이 최소일경우
+	else printf("min: %d\n", ma); // ma가 최소일경우
 
 	return 0;
 }
@@ -239,68 +239,68 @@ int main_02_01_02() {
 	int num1, num2, num3, total = 0;
 	scanf("%d %d %d", &num1, &num2, &num3); // 입력받기 
 	if (num1 == 1) {  // 입력받은 순서대로 출력 및 총 가격 입력받기
-		printf("Pizza\n");
-		total += 15000;
+		printf("Pizza\n"); // 1은 피자
+		total += 15000; // 가격
 	}
 	if (num1 == 2) {
-		printf("Burger\n");
-		total += 5000;
+		printf("Burger\n"); // 2는 버거
+		total += 5000; // 가격
 	}
 	if (num1 == 3) {
-		printf("Salad\n");
-		total += 4500;
+		printf("Salad\n"); // 3은 샐러드
+		total += 4500; // 가격
 	}
 	if (num1 == 4) {
-		printf("Ice cream\n");
-		total += 800;
+		printf("Ice cream\n"); // 4는 아이스크림
+		total += 800; // 가격
 	}
 	if (num1 == 5) {
-		printf("Beverge\n");
-		total += 500;
+		printf("Beverge\n"); //5눈 음료
+		total += 500; // 가격
 	}
 	if (num1 == 0) printf("None\n");
 	if (num2 == 1) {  // 두번째로 입력받은 음식
-		printf("Pizza\n");
-		total += 15000;
+		printf("Pizza\n");// 중복입력 허용받으므로 한번 더 똑같이함
+		total += 15000; // 포문 쓰는게 좀 더 깔끔해 보였을 것 같다.
 	}
 	if (num2 == 2) {
-		printf("Burger\n");
-		total += 5000;
+		printf("Burger\n");//2는 버거
+		total += 5000; // 버거 가격 더하기
 	}
 	if (num2 == 3) {
-		printf("Salad\n");
-		total += 4500;
+		printf("Salad\n"); // 3은 샐러드
+		total += 4500; // 총 가격에 더하기
 	}
 	if (num2 == 4) {
-		printf("Ice cream\n");
-		total += 800;
+		printf("Ice cream\n"); // 아이스크림
+		total += 800; // 총가격에 더하기
 	}
 	if (num2 == 5) {
-		printf("Beverge\n");
-		total += 500;
+		printf("Beverge\n"); // 음료
+		total += 500; // 토탈에 더하기
 	}
-	if (num2 == 0) printf("None\n");
+	if (num2 == 0) printf("None\n"); // 아무것도 아닌 경우
 	if (num3 == 1) { // 3번째로 입력받은 음식
-		printf("Pizza\n");
-		total += 15000;
+		printf("Pizza\n"); // 마지막 피자
+		total += 15000; // 총가격에 더하기
 	}
 	if (num3 == 2) {
-		printf("Burger\n");
-		total += 5000;
+		printf("Burger\n"); // 버거
+		total += 5000; // 토탈 가격에 더하기
 	}
-	if (num3 == 3) {
-		printf("Salad\n");
-		total += 4500;
+	if (num3 == 3) { 
+		printf("Salad\n"); // 샐러드
+		total += 4500; // 총가격에 더하기
 	}
 	if (num3 == 4) {
-		printf("Ice cream\n");
-		total += 800;
+		printf("Ice cream\n");// 4는 아이스크림
+		total += 800; // 총가격에 더하기
 	}
 	if (num3 == 5) {
-		printf("Beverge\n");
-		total += 500;
+		printf("Beverage\n"); // 음료
+		total += 500; // 마지막 가격 더하기
 	}
-	if (num3 == 0) printf("None\n");
+	if (num3 == 0) printf("None\n"); // 아무것도 없을경우
 	printf("Total:%dwon", total);
 	//Pizza 15, 000원, 2. Burger 5, 000원, 3. Salad 4, 500원, 4. Ice cream 800원, 5. Beverage 500원
 	return 0;
@@ -329,56 +329,56 @@ int main_02_00_04() {
 		num++;
 		printf("\n");
 		if (num < 10 || num>99) printf("none"); // 10의자리 숫자 읽어주기
-		else if (num >= 90) printf("ninety");
-		else if (num >= 80) printf("eighty");
-		else if (num >= 70) printf("seventy");
-		else if (num >= 60) printf("sixty");
-		else if (num >= 50) printf("fifty");
-		else if (num >= 40) printf("forty");
-		else if (num >= 30) printf("thirty");
-		else if (num >= 20) printf("twenty");
+		else if (num >= 90) printf("ninety"); // 90~ 99
+		else if (num >= 80) printf("eighty"); // 80 ~ 89
+		else if (num >= 70) printf("seventy"); // 70 ~ 79
+		else if (num >= 60) printf("sixty"); // 60 ~ 69
+		else if (num >= 50) printf("fifty"); // 50 ~ 59
+		else if (num >= 40) printf("forty"); // 40 ~ 49
+		else if (num >= 30) printf("thirty"); // 30 ~ 39
+		else if (num >= 20) printf("twenty"); // 20 ~ 29
 
 		if (num >= 20 && num < 100) { // 1의자리 숫자 읽어주기
-			if (num % 10 == 1) printf("-one");
-			if (num % 10 == 2) printf("-two");
-			if (num % 10 == 3) printf("-three");
-			if (num % 10 == 4) printf("-four");
-			if (num % 10 == 5) printf("-five");
-			if (num % 10 == 6) printf("-six");
-			if (num % 10 == 7) printf("-seven");
-			if (num % 10 == 8) printf("-eight");
-			if (num % 10 == 9) printf("-nine");
+			if (num % 10 == 1) printf("-one");// _1
+			if (num % 10 == 2) printf("-two"); // _2
+			if (num % 10 == 3) printf("-three"); // _3
+			if (num % 10 == 4) printf("-four"); // _4
+			if (num % 10 == 5) printf("-five"); // _5
+			if (num % 10 == 6) printf("-six"); // _6
+			if (num % 10 == 7) printf("-seven"); // _7
+			if (num % 10 == 8) printf("-eight"); //_8
+			if (num % 10 == 9) printf("-nine"); // _9
 		}
 		switch (num) { //11 ~ 19는 방식이 달라서 나눠주기
 		case 10:
-			printf("ten");
+			printf("ten"); //10
 			break;
 		case 11:
-			printf("eleven");
+			printf("eleven");//11
 			break;
 		case 12:
-			printf("twelve");
+			printf("twelve"); // 12
 			break;
 		case 13:
-			printf("thirteen");
+			printf("thirteen"); //13
 			break;
 		case 14:
-			printf("fourteen");
+			printf("fourteen");//14
 			break;
 		case 15:
-			printf("fifteen");
+			printf("fifteen"); //15
 			break;
 		case 16:
-			printf("sixteen");
+			printf("sixteen");// 16
 			break;
 		case 17:
-			printf("seventeen");
+			printf("seventeen"); //17
 			break;
 		case 18:
-			printf("eighteen");
+			printf("eighteen");//18
 			break;
 		case 19:
-			printf("nineteen");
+			printf("nineteen");//19
 			break;
 
 		}

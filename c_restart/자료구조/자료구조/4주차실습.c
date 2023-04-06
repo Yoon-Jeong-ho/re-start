@@ -104,7 +104,7 @@ int main_04_04() {
 	return 0;
 }
 
-int main() {
+int main_04_05() {
 	int** arr, N, M, num = 1, teg = 0, sum=0;
 	scanf("%d %d", &N, &M);
 	arr = (int**)malloc(sizeof(int*) * N);

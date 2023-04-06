@@ -1,19 +1,20 @@
-﻿  hello.c
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(57,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(57,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 1과(와) 충돌합니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(61,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int *'입니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(61,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 2과(와) 충돌합니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(63,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int *'입니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(63,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 2과(와) 충돌합니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(65,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(65,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 1과(와) 충돌합니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(65,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'int **'입니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(65,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int **' 형식의 인수 3과(와) 충돌합니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(65,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 4의 형식이 'int *'입니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(65,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 4과(와) 충돌합니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(75,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int (*)[8]'입니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(75,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int (*)[8]' 형식의 인수 1과(와) 충돌합니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(75,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int (*)[4][8]'입니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(75,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int (*)[4][8]' 형식의 인수 2과(와) 충돌합니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\hello.c(64,1): warning C4047: '초기화 중': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+﻿  노드 연습기.c
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(33,22): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(36,22): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(67,17): warning C4098: 'addnode': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(71,48): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(73,50): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(74,25): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(76,25): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(77,25): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(78,25): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(85,17): warning C4098: 'deletnode': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(89,48): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(90,21): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(91,21): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(92,22): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(93,22): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(100,17): warning C4098: 'getnode': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(104,48): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(111,24): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
   c_restart.vcxproj -> C:\Users\k\OneDrive\문서\re-start\c_restart\x64\Debug\c_restart.exe
