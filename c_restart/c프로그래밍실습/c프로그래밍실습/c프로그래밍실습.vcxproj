@@ -22,6 +22,7 @@
     <ClCompile Include="3주차.c" />
     <ClCompile Include="4주차.c" />
     <ClCompile Include="5주차.c" />
+    <ClCompile Include="6주차.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

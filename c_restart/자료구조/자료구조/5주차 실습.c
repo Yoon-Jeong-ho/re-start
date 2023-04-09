@@ -21,7 +21,7 @@ void deletnode(list* lprt, int r);
 void getnode(list* lprt,int r);
 void printnode(list* lprt);
 
-int main() {
+int main_05_50_05_90() {
     int num, count = 1, r;
     char ch, e;
     list* L;

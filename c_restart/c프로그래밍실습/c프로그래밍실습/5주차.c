@@ -396,7 +396,7 @@ int main_02_00_05() {
 	return 0;
 }
 
-int main() {
+int main_02_02_02_20_0202020202() {
 	int num1, num2, num3,result=0;
 	scanf("%d %d %d", &num1, &num2, &num3); // 숫자 입력
 	if (num1 + num2 == num3) printf("+\n"), result++; // 더하는 경우 중복도 허용하므로 else if 사용하지 않음
