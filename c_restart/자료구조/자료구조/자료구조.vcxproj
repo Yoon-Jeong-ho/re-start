@@ -22,6 +22,7 @@
     <ClCompile Include="5주차 실습.c" />
     <ClCompile Include="4주차실습.c" />
     <ClCompile Include="6주차 실습.c" />
+    <ClCompile Include="두번째과제.c" />
     <ClCompile Include="첫 과제.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

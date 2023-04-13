@@ -363,7 +363,7 @@ int main_0987654_9876545678_98765() {
 	return 0;
 }
 
-int main() {
+int main_235235235837463789213() {
 	int N, max, min, lastnum,num,prevnum,count=1,maxcount = 0, isfaliquo, previsfaliquo;
 	scanf("%d", &N);
 	isfaliquo = 0;
@@ -415,3 +415,11 @@ int main() {
 	}
 	return 0;
 }	
+
+
+int main() {
+	char a = 'A';
+	a = a - 'A';
+	if (a ==0)printf("%d %c", a, a);
+	return 0;
+}
