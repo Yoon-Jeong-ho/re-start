@@ -417,7 +417,7 @@ int main_235235235837463789213() {
 }	
 
 
-int main() {
+int main_9847627847627489582734() {
 	char a = 'A';
 	a = a - 'A';
 	if (a ==0)printf("%d %c", a, a);

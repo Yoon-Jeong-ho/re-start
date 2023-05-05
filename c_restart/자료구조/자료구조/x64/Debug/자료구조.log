@@ -1,2 +1,6 @@
-﻿  두번째과제.c
+﻿  7주차 실습2.c
+C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\자료구조\7주차 실습2.c(87,11): warning C4098: 'union1': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\자료구조\7주차 실습2.c(100,11): warning C4098: 'union1': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\자료구조\7주차 실습2.c(113,11): warning C4098: 'union1': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\자료구조\7주차 실습2.c(220,11): warning C4098: 'intersect': 'void' 함수에서 값을 반환하고 있습니다.
   자료구조.vcxproj -> C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\x64\Debug\자료구조.exe
