@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="10주차 실습.c" />
+    <ClCompile Include="10주차 실습2.c" />
     <ClCompile Include="5주차 실습.c" />
     <ClCompile Include="4주차실습.c" />
     <ClCompile Include="6주차 실습.c" />

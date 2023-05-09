@@ -1,6 +1,18 @@
-﻿  7주차 실습2.c
-C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\자료구조\7주차 실습2.c(87,11): warning C4098: 'union1': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\자료구조\7주차 실습2.c(100,11): warning C4098: 'union1': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\자료구조\7주차 실습2.c(113,11): warning C4098: 'union1': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\자료구조\7주차 실습2.c(220,11): warning C4098: 'intersect': 'void' 함수에서 값을 반환하고 있습니다.
-  자료구조.vcxproj -> C:\Users\k\OneDrive\문서\re-start\c_restart\자료구조\x64\Debug\자료구조.exe
+﻿  10주차 실습.c
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(32,54): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(32,48): warning C4024: 'push': 형식 및 실제 매개 변수 3의 형식이 서로 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(34,18): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(34,18): warning C4047: '=': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(36,35): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(36,29): warning C4024: 'pop': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(38,22): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(38,16): warning C4024: 'pop': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(41,18): warning C4047: '=': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(43,36): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(43,30): warning C4024: 'pop': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(44,19): warning C4047: '=': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(46,32): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(46,26): warning C4024: 'push': 형식 및 실제 매개 변수 3의 형식이 서로 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(50,34): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\자료구조\10주차 실습.c(50,28): warning C4024: 'pop': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+  자료구조.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\자료구조\x64\Debug\자료구조.exe

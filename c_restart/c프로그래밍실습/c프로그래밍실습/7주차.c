@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+#include<stdlib.h>
 
 int main_07_09_01() {
 	int N,result=0;
@@ -260,7 +261,7 @@ int main_9872652678() {
 }
 
 
-int main() {
+int main_2023_9876256789298() {
 	int a[100], b[100], c[200], count = 0, same, tmp, aCnt=0,btmp=0;
 	for (int i = 0; i < 101; i++) {
 		scanf("%d", &tmp);
@@ -294,3 +295,120 @@ int main() {
 	for (int i = 0; i < count; i++) printf(" %d", c[i]);
 	return 0;
 }	
+
+int main_ahdml2_128() {
+	int N, num[50],same,count;
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++) {
+		scanf("%d", &num[i]);
+	}
+	for (int i = 0; i < N; i++) {
+		same = 0;// 중복 없을 경우 0
+		for (int j = 0; j < i; j++) {
+			if (num[i] == num[j]) same = 1; // 중복 있을 경우 1
+		}
+		if (same == 1) continue; // 중복있으면 다음 i 진행
+		count = 0; //중복 잡아내기
+		for (int j = i; j < N; j++) {
+			if (num[i] == num[j]) count++; //중복시 카운트 하나씩 늘리기
+		}
+		printf("%d %d\n", num[i], count);
+	}
+
+	return 0;
+}
+
+int main_quiz9_2() {
+	int firstcount = 0, secondcount = 0, flag = 0;
+	char x[100], y[100], tmp;
+	while (1) {
+		scanf("%c", &tmp);
+		if (flag == 1 && tmp == '*') break; // 두번째 * 입력으로 끝이다.
+		else if (tmp == '*') { // 첫번째 단어 끝
+			flag = 1;
+			continue; // 입력되지 않게 끝으로 간당
+		}
+		if (flag == 0) { // 첫번째 단어
+			x[firstcount++] = tmp;
+		}
+		else if (flag == 1) { // 두번째 단어
+			y[secondcount++] = tmp;
+		}
+	}
+	for (int i = 0; i < firstcount && i < secondcount; i++) {
+		if (x[i] > y[i]) { // x가 큰 경우
+			flag = 0;
+		}
+		else if (x[i] < y[i]) { // y가 큰 경우
+			flag = 1;
+		}
+		else if (i == firstcount - 1 || i == secondcount - 1) { // 마지막 까지 똑같은 경우 더 짧은 것이 먼저다.
+			if (firstcount < secondcount) flag = 1;
+			else if (firstcount > secondcount) flag = 0;
+		}
+	}
+	if (flag == 0) {
+		for (int i = 0; i < secondcount; i++) printf("%c", y[i]);
+	}
+	else {
+		for (int i = 0; i < firstcount; i++) printf("%c", x[i]);
+	}
+
+	return 0;
+}
+
+int main_quiz9_03_02() {
+	int N, num[101], max=0,count=1, result[101];
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++)scanf("%d", &num[i]);
+	for (int i = 0; i < N-1; i++) {
+		if (num[i] * num[i + 1] < 0) { // 음양 바뀌는 경우
+			count++;
+		}
+		else count = 1;
+		if (count >= max && count > 1) { // 가장 큰 것으로 교체해야할 때..
+			max = count;
+			for (int j = 0; j < max; j++) {
+				result[j] = num[i - max+2 + j];
+			}
+		}
+		else if (max == 0 && i == N - 2) {
+			result[0] = num[i+1];
+			max++;
+		}
+	}
+	printf("%d\n", max);
+	for (int i = 0; i < max; i++) printf(" %d", result[i]);
+	return 0;
+}	
+
+int main_quiz9_04_02() {
+	int num, S1[20], S2[20], rank[20],count;
+	double mean[20];
+	scanf("%d", &num); 
+	for (int i = 0; i < num; i++)scanf("%d", &S1[i]); //입력
+	for (int i = 0; i < num; i++) {
+		scanf("%d", &S2[i]); //입력
+		mean[i] = ((double)S1[i]*40 + S2[i]*60) / 100; // 평균 계산
+	}
+	for (int i = 0; i < num; i++) { // 등수 계산
+		count = 1;
+		for (int j = 0; j < num; j++) {
+			if (mean[i] < mean[j]) count++; // 큰것이 있으면 숫자를 더해줌으로서 등수 설정
+		}
+		rank[i] = count;
+	}
+	for (int i = 0; i < num; i++) { // 출력문
+		printf("%d %d %d %.1f %d", i + 1, S1[i], S2[i], mean[i], rank[i]);
+		if (S2[i] >= 80 || rank[i] <= num * 0.7) printf(" P\n"); // P 조건
+		else printf(" F\n"); // 조건 미달시
+	}
+	return 0;
+}
+
+
+int main() {
+	printf("%d %d",'0' ,'9');
+
+	return 0;
+}

@@ -20,7 +20,7 @@ void addsecondnode(list* L);
 void union1(list* L);
 void intersect(list *L);
 
-int main() {
+int main_8287() {
 	list* L;
 	L = (list*)malloc(sizeof(list));
 	node* ahead, * bhead, * unhead, * inhead;
