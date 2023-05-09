@@ -408,7 +408,18 @@ int main_quiz9_04_02() {
 
 
 int main() {
-	printf("%d %d",'0' ,'9');
+	int* tmp, * st;
+	st = (int*)malloc(sizeof(int) * 2);
+	st[0] = 1;
+	st[1] = 2;
+	printf("%d %d %d\n", st, st[0],st[1]);
+	tmp = st;
+	st = (int*)malloc(sizeof(int) * 2);
+	printf("%d %d %d\n", tmp, tmp[0], tmp[1]);
+	free(tmp);
+	printf("%d %d %d\n", st, st[0], st[1]);
+	tmp = st;
+	printf("%d %d %d\n", tmp, tmp[0], tmp[1]);
 
 	return 0;
 }
