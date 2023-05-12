@@ -1,10 +1,3 @@
-﻿  7주차.c
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\7주차.c(415,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\7주차.c(415,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 1과(와) 충돌합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\7주차.c(418,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\7주차.c(418,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 1과(와) 충돌합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\7주차.c(420,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\7주차.c(420,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 1과(와) 충돌합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\7주차.c(422,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\7주차.c(422,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 1과(와) 충돌합니다.
+﻿  11주차.c
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\11주차.c(143,22): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
   c프로그래밍실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\x64\Debug\c프로그래밍실습.exe

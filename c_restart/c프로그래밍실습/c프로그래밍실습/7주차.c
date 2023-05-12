@@ -407,7 +407,7 @@ int main_quiz9_04_02() {
 }
 
 
-int main() {
+int main_987654567890() {
 	int* tmp, * st;
 	st = (int*)malloc(sizeof(int) * 2);
 	st[0] = 1;
