@@ -1,3 +1,4 @@
-﻿  11주차.c
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\11주차.c(143,22): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
+﻿  과제5.c
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\과제5.c(206,22): warning C4101: 'c' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\과제5.c(262,15): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   c프로그래밍실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\x64\Debug\c프로그래밍실습.exe
