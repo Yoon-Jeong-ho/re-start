@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="10주차 실습.c" />
     <ClCompile Include="10주차 실습2.c" />
+    <ClCompile Include="11주차 실습 1.c" />
+    <ClCompile Include="11주차 실습2.c" />
+    <ClCompile Include="12주차트리실습.c" />
     <ClCompile Include="3과제.c" />
     <ClCompile Include="5주차 실습.c" />
     <ClCompile Include="4주차실습.c" />
