@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="11주차.c" />
+    <ClCompile Include="12주차.c" />
     <ClCompile Include="3주차.c" />
     <ClCompile Include="4주차.c" />
     <ClCompile Include="5주차.c" />
