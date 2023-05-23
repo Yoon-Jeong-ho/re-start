@@ -54,5 +54,8 @@
     <ClCompile Include="12주차트리실습.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="4번째과제.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

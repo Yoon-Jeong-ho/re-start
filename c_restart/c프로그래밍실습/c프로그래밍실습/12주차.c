@@ -208,7 +208,7 @@ int main_23972387() {
 }
 
 
-int main() {
+int main_8127461274() {
 	int n, m[100],prev=0,result[100], c = 0, max = 0;
 	scanf("%d", &n);
 	for (int i = 0; i < n; i++) {
@@ -227,5 +227,15 @@ int main() {
 		else c = 0;
 	}
 	for (int i = 0; i < max+1; i++)printf("%d ", result[i]);
+	return 0;
+}
+
+int main() {
+	int n;
+	char c;
+	scanf("%d%c", &n,&c);
+	
+	printf("%d %c", n, c);
+
 	return 0;
 }
