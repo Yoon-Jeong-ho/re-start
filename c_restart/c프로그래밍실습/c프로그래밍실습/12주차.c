@@ -230,12 +230,128 @@ int main_8127461274() {
 	return 0;
 }
 
-int main() {
-	int n;
-	char c;
-	scanf("%d%c", &n,&c);
-	
-	printf("%d %c", n, c);
+int main_192841629() {
+	int n[3][2],sum = 0;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 2; j++) {
+			scanf("%d", &n[i][j]);
+		}
+	}
+	printf("%d\n%d\n%d", n[0][1]+n[0][0], n[1][1] + n[1][0], n[2][1] + n[2][0]);
 
+
+	return 0;
+}
+
+int main_19284612948() {
+	char a[6][5] = { {'Z','E','R','O','-'},{'O','N','E','-','-'},{'T','W','O','-','-'},{'T','H','R','E','E'},{'F','O','U','R','-'},{'F','I','V','E','-'} };
+	int n;
+	for (int i = 0; i < 3; i++) {
+		scanf("%d", &n);
+		for (int j = 0; j < 5; j++) {
+			printf("%c", a[n][j]);
+		}
+		printf("\n");
+	}
+
+
+	return 0;
+}
+
+int main_2982828() {
+	int n[3][3], m[2][2], sum = 0, result[2] = { 3,3 };
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			scanf("%d", &n[i][j]);
+		}
+	}
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
+			scanf("%d", &m[i][j]);
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("%d", n[i][j]);
+		}
+		printf("\n");
+	}
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
+			printf("%d", m[i][j]);
+		}
+		printf("\n");
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (n[i][j] == m[0][0]) {
+				if (i > 1||j>1) break;
+				if (n[i + 1][j] == m[1][0] && n[i][j + 1] == m[0][1] && n[i + 1][j + 1] == m[1][1]) {
+					result[0] = i;
+					result[1] = j;
+				}
+				}
+		}
+	}
+	if (result[0] == 3) printf("none");
+	else printf("%d %d", result[0], result[1]);
+	return 0;
+}	
+
+int arrsum(int x[], int s, int e);
+int main_828262() {
+	int n, s, e, m[100],sum;
+	scanf("%d %d %d", &n, &s, &e);
+	for (int i = 0; i < n; i++) scanf("%d", &m[i]);
+	sum = arrsum(m, s, e);
+	printf("%d", sum);
+	return 0;
+}
+int arrsum(int x[], int s, int e) {
+	int sum = 0;
+	for (int i = s; i <= e; i++) sum += x[i];
+	return sum;
+}
+
+void prt(int x[][5], int n);
+int main_2988282() {
+	int n,s[20][5];
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < 5; j++) scanf("%d", &s[i][j]);
+	}
+	for (int i = 0; i < n; i++) prt(s, n-i-1);
+	return 0;
+}
+void prt(int x[][5], int n) {
+	for (int i = 0; i < 5; i++) printf("%d ", x[n][i]);
+	printf("\n");
+}
+
+int main_98276() {
+	int n, m[100], a, max = 0,result=0,d;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+		scanf("%d", &m[i]);
+	}
+	a = m[n - 1];
+	for (int i = 0; i < n - 1; i++) {
+		d = m[i] - a;
+		if (d < 0) d = d * -1;
+		
+		if (d > max|| (d ==max&& m[i]>result)) {
+			result = m[i];
+			max = d;
+		}
+	}
+	printf("%d", result);
+
+	return 0;
+}	
+
+int main_3876() {
+	char c[100];
+	scanf("%s", c);
+	printf("%d %s",strlen(c), c);
 	return 0;
 }
