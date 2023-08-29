@@ -57,5 +57,20 @@
     <ClCompile Include="4번째과제.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="13주차 실습1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="13주차 실습2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="14주차실습.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="두원 요청.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="과제5.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
