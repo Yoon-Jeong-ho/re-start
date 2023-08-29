@@ -24,6 +24,9 @@
     <ClCompile Include="11주차 실습 1.c" />
     <ClCompile Include="11주차 실습2.c" />
     <ClCompile Include="12주차트리실습.c" />
+    <ClCompile Include="13주차 실습1.c" />
+    <ClCompile Include="13주차 실습2.c" />
+    <ClCompile Include="14주차실습.c" />
     <ClCompile Include="3과제.c" />
     <ClCompile Include="4번째과제.c" />
     <ClCompile Include="5주차 실습.c" />
@@ -31,7 +34,9 @@
     <ClCompile Include="6주차 실습.c" />
     <ClCompile Include="7주차 실습2.c" />
     <ClCompile Include="7주차 실습_1.c" />
+    <ClCompile Include="과제5.c" />
     <ClCompile Include="두번째과제.c" />
+    <ClCompile Include="두원 요청.c" />
     <ClCompile Include="첫 과제.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
