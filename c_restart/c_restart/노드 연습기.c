@@ -20,7 +20,7 @@ void deletnode(list* lprt, int r);
 void getnode(list* lprt, int r);
 void printnode(list* lprt);
 
-int main() {
+int main_241241() {
     int num, count = 1, r;
     char ch, e;
     list* List;
@@ -112,4 +112,9 @@ void printnode(list* List) {
         printf("%c", tmp->elem); // 데이터 프린트!
     }
     printf("\n"); // 중간에 실현된 것이면 엔터가 필요하므로
+}
+
+int main() {
+    double a = 1.1;
+    printf("%f", a);
 }

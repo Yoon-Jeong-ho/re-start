@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="hello.c" />
     <ClCompile Include="노드 연습기.c" />
+    <ClCompile Include="코드주석.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
