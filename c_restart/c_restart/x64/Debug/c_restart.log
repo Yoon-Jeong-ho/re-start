@@ -1,20 +1,20 @@
 ﻿  노드 연습기.c
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(33,22): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(36,22): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(67,17): warning C4098: 'addnode': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(71,48): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(73,50): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(74,25): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(76,25): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(77,25): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(78,25): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(85,17): warning C4098: 'deletnode': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(89,48): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(90,21): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(91,21): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(92,22): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(93,22): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(100,17): warning C4098: 'getnode': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(104,48): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-C:\Users\k\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(111,24): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
-  c_restart.vcxproj -> C:\Users\k\OneDrive\문서\re-start\c_restart\x64\Debug\c_restart.exe
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(33,16): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(36,16): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(67,17): warning C4098: 'addnode': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(71,37): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(73,14): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(74,20): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(76,15): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(77,9): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(78,15): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(85,17): warning C4098: 'deletnode': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(89,37): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(90,10): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(91,10): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(92,16): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(93,16): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(100,17): warning C4098: 'getnode': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(104,37): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c_restart\노드 연습기.c(111,13): warning C4133: '=': 'node *'과(와) 'node *' 사이의 형식이 호환되지 않습니다.
+  c_restart.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\x64\Debug\c_restart.exe

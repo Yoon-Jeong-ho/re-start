@@ -21,5 +21,8 @@
     <ClCompile Include="노드 연습기.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="코드주석.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
