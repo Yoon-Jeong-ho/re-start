@@ -21,12 +21,14 @@
   <ItemGroup>
     <ClCompile Include="11주차.c" />
     <ClCompile Include="12주차.c" />
+    <ClCompile Include="14주차.c" />
     <ClCompile Include="3주차.c" />
     <ClCompile Include="4주차.c" />
     <ClCompile Include="5주차.c" />
     <ClCompile Include="6주차.c" />
     <ClCompile Include="7주차.c" />
     <ClCompile Include="과제5.c" />
+    <ClCompile Include="두원 코드.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
