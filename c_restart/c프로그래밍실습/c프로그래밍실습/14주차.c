@@ -4,16 +4,16 @@
 #include<string.h>
 
 int main() {
-    int n[50][2], x, y, m,c=1;
-    scanf("%d", &m);
-    for (int i = 0; i < m; i++) scanf("%d %d", &n[i][0], &n[i][1]);
-    for (int i = 0; i < m; i++) {
-        c = 1;
-        for (int k = 0; k < m; k++) {
-            if (n[i][0] < n[k][0] && n[i][1] < n[k][1]) c++;
-        }
-        printf("%d ", c);
-    }
+    char x[6][5] = { {'Z', 'E', 'R', 'O', '-'}, {'O', 'N', 'E', '-', '-'}, {'T', 'W', 'O', '-', '-'}, {'T', 'H', 'R', 'E', 'E'}, {'F', 'O', 'U', 'R', '-'},{'F', 'I', 'V', 'E', '-'} };
+    int a;
 
-    return 0;
-}
+    for (int i = 0; i < 3; i++) {
+        scanf("%d", &a);
+        for (int j = 0; j < 5; j++) {
+            printf("%c", x[a][j]);
+        }
+        printf("\n");
+
+    }
+    return 0;x
+}   

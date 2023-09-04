@@ -1,4 +1,2 @@
 ﻿  14주차.c
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(7,22): warning C4101: 'y' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(7,19): warning C4101: 'x' :참조되지 않은 지역 변수입니다.
   c프로그래밍실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\x64\Debug\c프로그래밍실습.exe
