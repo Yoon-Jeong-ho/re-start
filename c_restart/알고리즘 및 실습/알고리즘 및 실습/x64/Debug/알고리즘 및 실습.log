@@ -1,0 +1,4 @@
+﻿  2주차.c
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\2주차.c(11,23): warning C4101: 'maxi' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\2주차.c(11,19): warning C4101: 'max' :참조되지 않은 지역 변수입니다.
+  알고리즘 및 실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\x64\Debug\알고리즘 및 실습.exe
