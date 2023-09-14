@@ -18,5 +18,14 @@
     <ClCompile Include="2주차.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="퀵정렬.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="힙.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="병합정렬.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

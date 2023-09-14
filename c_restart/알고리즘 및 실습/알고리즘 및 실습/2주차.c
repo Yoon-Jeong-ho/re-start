@@ -6,7 +6,7 @@
 #include<time.h>
 //#include <Windows.h>
 
-int main() {
+int main_124() {
 	int n, * num, tmp;
 	scanf("%d", &n);
 	num = (int*)malloc(sizeof(int) * n);
