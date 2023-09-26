@@ -1,23 +1,4 @@
 ﻿  14주차.c
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(23,24): warning C4477: 'printf' : 서식 문자열 '%lld'에 '__int64' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(23,24): message : 서식 문자열에서 '%d'을(를) 사용하는 것이 좋습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(23,24): message : 서식 문자열에서 '%I32d'을(를) 사용하는 것이 좋습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(15,10): warning C4101: 'c' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(44,12): warning C4244: '함수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(47,19): warning C4244: '초기화 중': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(56,12): warning C4244: '=': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(66,16): warning C4244: '=': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(69,35): warning C4098: 'downHeap': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(72,16): warning C4244: '=': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(75,31): warning C4098: 'downHeap': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(82,16): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 '__int64'입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(82,16): message : 서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(82,16): message : 서식 문자열에서 '%Id'을(를) 사용하는 것이 좋습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(82,16): message : 서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(100,9): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(132,10): warning C4033: 'heapify'은(는) 값을 반환해야 합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(121): warning C4716: 'heap_sort': 값을 반환해야 합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(108): warning C4716: 'main_heap': 값을 반환해야 합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(124): warning C4716: 'build_min_heap': 값을 반환해야 합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(141): warning C4716: 'heapify': 값을 반환해야 합니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(10,17): warning C4020: 'gets_s': 실제 매개 변수가 너무 많습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(9,6): warning C4101: 'n' :참조되지 않은 지역 변수입니다.
   c프로그래밍실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\x64\Debug\c프로그래밍실습.exe
