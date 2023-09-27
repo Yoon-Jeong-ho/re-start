@@ -10,16 +10,24 @@ int removeMax();
 void upHeap(int i);
 void downHeap(int i);
 void printHeap();
+void printArray();
 void rBuildHeap(int i);
+void inPlaceHeapSort();
 int main() {
-    char c;
-    int a,t;
-    scanf("%d", &t);
-    for (int i = 0; i < t; i++) scanf("%d", &H[++n]);
-    rBuildHeap(1);
-    printHeap();
-
+    inPlaceHeapSort();
+    printArray();
     return 0;
+}
+void inPlaceHeapSort() {
+    char c;
+    int a, t;
+    scanf("%d", &t);
+    for (int i = 0; i < t; i++) { scanf("%d", &a); insertItem(a); }
+    for (int i = 0; i < t; i++) {
+        a = removeMax();
+        H[n + 1] = a;
+    }
+    n = t;
 }
 void rBuildHeap(int i) {
     if (i > n) return;
@@ -71,7 +79,12 @@ void printHeap() {
         printf("%d ", H[i++]);
     }
 }
-
+void printArray() {
+    int i = 1;
+    while (i <= n) {
+        printf("%d ", H[i++]);
+    }
+}
 
 
 
