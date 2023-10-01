@@ -4,36 +4,39 @@
 #include<stdlib.h>
 #include<string.h>
 #include<time.h>
-int main() {
-	char c[101],d[100][100],e[100], f[100][100],resultc[100];
-	int n,a=0,b=0,i=0,result = 0,x,y;
-	scanf("%d %d", &x, &y);
-	getchar();
-	gets_s(c, 100, stdin);
-	gets_s(e, 100, stdin);
-	while (c[i] != '\0') {
-		if (c[i] == ' ') { d[a][b] = '\0'; a++; b = 0; }
-		else d[a][b++] = c[i];
-		i++;
-	}
-	d[a][b] = '\0';
-	a = 0; b = 0; i = 0;
-	while (e[i] != '\0') {
-		if (e[i] == ' ') { f[a][b] = '\0'; a++; b = 0; }
-		else f[a][b++] = e[i];
-		i++;
-	}
-	f[a][b] = '\0';
-	if (strcmp(d[x], f[y]) <= 0) {
-		strcpy(resultc, d[x]);
-		resultc[strlen(d[x])] = '\0';
-		strcat(resultc, f[y]);
-	}
-	else {
-		strcpy(resultc, f[y]);
-		resultc[strlen(f[y])] = '\0';
-		strcat(resultc, d[x]);
-	}
+int check_w(char* p, char* q);
 
-	printf("%s", resultc);
+int main() {
+	int n,m, num[20] = {0},max=0;
+	char a[20][200];
+	scanf("%d %d", &n,&m); getchar();
+	for(int i = 0 ; i < n ; i++)gets(a[i]); // 문자열 입력받기
+	for (int i = 0; i < n; i++) {
+		num[i] = check_w(a[i], a[i]+m); // 함수값 배열에 저장
+		printf("%d ", num[i]);
+	}
+	while (1) {
+		max = 0;
+		for (int i = 0; i < n; i++) { // 큰값 찾기
+			if (num[i] > max) max = num[i];
+		}
+		if (max == 0) break;// max가 모두 0이면 반복문 끝
+		for (int i = 0; i < n; i++) {//큰값들 앞에서 부터 출력하기
+			if (num[i] == max) {
+				printf("%s\n", a[i]);
+				num[i] = 0;
+			}
+		}
+	}
+	return 0;
+}
+int check_w(char* p, char* q) {
+	int sum = 0;
+	for (p; p <= q; p++) {
+		if (*p == '\0')break;
+		if ((*p < 'a' || *p > 'z') && (*p < 'A' || *p > 'Z') && *p != ' ') { // 알파벳과 공백이 아닌경우
+			sum++; // 하나씩 늘린다.
+		}
+	}
+	return sum;
 }
