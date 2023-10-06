@@ -1,11 +1,3 @@
-﻿  힙.c
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(15,10): warning C4101: 'c' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(62,35): warning C4098: 'downHeap': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(68,31): warning C4098: 'downHeap': 'void' 함수에서 값을 반환하고 있습니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(93,9): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(125,10): warning C4033: 'heapify'은(는) 값을 반환해야 합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(101): warning C4716: 'main_heap': 값을 반환해야 합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(114): warning C4716: 'heap_sort': 값을 반환해야 합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(117): warning C4716: 'build_min_heap': 값을 반환해야 합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\힙.c(134): warning C4716: 'heapify': 값을 반환해야 합니다.
+﻿  퀵정렬.c
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\퀵정렬.c(30): warning C4716: 'process': 값을 반환해야 합니다.
   알고리즘 및 실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\x64\Debug\알고리즘 및 실습.exe
