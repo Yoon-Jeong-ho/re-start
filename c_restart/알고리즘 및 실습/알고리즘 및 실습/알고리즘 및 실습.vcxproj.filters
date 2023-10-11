@@ -27,5 +27,8 @@
     <ClCompile Include="병합정렬.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="사전.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
