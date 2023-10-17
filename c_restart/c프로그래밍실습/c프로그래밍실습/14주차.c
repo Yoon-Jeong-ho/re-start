@@ -4,47 +4,30 @@
 #include<stdlib.h>
 #include<string.h>
 #include<time.h>
-
-typedef struct {
-	//node* next;
-	int num;
-	char name[100];
-}node;
-
-
+/*
+strlen() : 길이
+strcpy(a,b) : a에 b를 복사 
+strcat(a,b) : a 뒤에 b를 붙임
+strcmp(a,b) : s1의 순위
+b = atoi,l,f(a): 숫자 형에 따른 문자를 숫자로 변환
+*/
+//
+//typedef struct {
+//	char a[100];
+//	long b,c;
+//}node;
+struct person {
+	char a[100];
+	long b, c;
+};
+void swap(struct person* p, struct person* q);
 int main() {
-	node a[100];
-	int n;
-	char tmp[100];
-	int tmpn;
-	scanf("%d", &n);
-	getchar();
-	for (int i = 0; i < n; i++) {
-		gets(a[i].name);
-		scanf("%d", &a[i].num);
-		getchar();
-	}
-	for (int i = 0; i < n; i++) {
-		for (int j = i + 1; j < n; j++) {
-			if (strcmp(a[i].name, a[j].name) > 0) {
-				strcpy(tmp, a[i].name);
-				strcpy(a[i].name, a[j].name);
-				strcpy(a[j].name, tmp);
-				tmpn = a[i].num;
-				a[i].num = a[j].num;
-				a[j].num = tmpn;
+	int n, m;
+	struct person a[100];
+	scanf("%d %d", &n, &m);
 
-			}
-			if (strcmp(a[i].name, a[j].name) == 0 && a[i].num > a[j].num) {
-				tmpn = a[i].num;
-				a[i].num = a[j].num;
-				a[j].num = tmpn;
-			}
-
-		}
-	}
-	for (int i = 0; i < n; i++) {
-		printf("%s %d\n", a[i].name, a[i].num);
-	}
-	return 0;
+}
+void swap(struct person* p, struct person* q) {
+	struct person r;
+	r = *p; *p = *q; *q = r;
 }

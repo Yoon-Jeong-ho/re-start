@@ -1,4 +1,7 @@
 ﻿  14주차.c
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(22,3): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(23,9): warning C4477: 'scanf' : 서식 문자열 '%d'에 'int *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(51,9): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(51,9): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 5개 필요하지만 4개가 제공되었습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(51,9): message : 누락된 variadic 인수 5이(가) 서식 문자열 '%c'에 필요합니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(81,19): warning C4474: 'printf' : 서식 문자열에 전달된 인수가 너무 많습니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(81,19): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 0개 필요하지만 2개가 제공되었습니다.
   c프로그래밍실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\x64\Debug\c프로그래밍실습.exe
