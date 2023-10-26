@@ -23,7 +23,7 @@ int main_3() {
 
 int findkey(int*, int, int,int);
 
-int main() {
+int main_24() {
 	int n, k,*num;
 	scanf("%d %d", &n, &k);
 	num = (int*)malloc(sizeof(int) * n);
