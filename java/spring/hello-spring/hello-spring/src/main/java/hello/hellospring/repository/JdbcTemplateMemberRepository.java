@@ -1,18 +1,19 @@
-et;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+package hello.hellospring.repository;
+
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
 public class JdbcTemplateMemberRepository implements MemberRepository {
     private final JdbcTemplate jdbcTemplate;
     public JdbcTemplateMemberRepository(DataSource dataSource) {
@@ -22,7 +23,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
     public Member save(Member member) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
         jdbcInsert.withTableName("member").usingGeneratedKeyColumns("id");
-
+        System.out.println("jdbcInsert = " + jdbcInsert);
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("name", member.getName());
 
