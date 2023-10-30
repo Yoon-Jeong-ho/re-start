@@ -11,53 +11,58 @@ strcat(a,b) : a 뒤에 b를 붙임
 strcmp(a,b) : s1의 순위
 b = atoi,l,f(a): 숫자 형에 따른 문자를 숫자로 변환
 */
-struct parking_info {
-	char goods, longs;
-	int num, pnum, date, time;
-	double price;
-
-}parking_info;
-
+typedef struct {
+	char *name;
+	int k, e, m,num,result,cnt;
+	float mean;
+}student;
 int main() {
-	int n,tmp,num[100],m=0;
-	scanf("%d", &n);
+	int n,num1=0,numb=0, **nn,m;
+	float  * num, max = -99999;
+	student* st,ttmp;
+
+	char** c,a = 'a', b,tmp[105];
+	scanf("%d", &n); getchar();
+
+	st = (student*)malloc(sizeof(student) * (n));
+	if (st == NULL) {
+		printf("False");
+		return -1;
+	}
 	for (int i = 0; i < n; i++) {
-		scanf("%d", &tmp);
-		if (tmp < 1)continue;
-		num[m++] = tmp;
-	}
-	if (m % 2 == 0) {
-		for (int i = 0; i < m; i++) {
-			tmp = i;
-			for (int j = i + 1; j < m; j++) {
-				if (num[tmp] < num[j]) tmp = j;
+		scanf("%s", tmp); getchar();
+		st[i].name = (char*)malloc(sizeof(char) * (strlen(tmp) + 1));
+		strcpy(st[i].name, tmp);
+		num1 = 0;
+		numb = 0;
+		m = 0;
+		for (int j = 0; j < strlen(tmp); j++) {
+			if (tmp[j] == 'i' || tmp[j] == 'a' || tmp[j] == 'e' || tmp[j] == 'o' || tmp[j] == 'u' || tmp[j] == 'I' || tmp[j] == 'A' || tmp[j] == 'E' || tmp[j] == 'O' || tmp[j] == 'U') numb++;
+			else if (tmp[j] >= '0' && tmp[j] <= '9') {
+				m = tmp[j] - '0';
 			}
-			if (tmp == i) continue;
-			n = num[tmp];
-			num[tmp] = num[i];
-			num[i] = n;
+			else num1++;
+		}
+		st[i].cnt = num1;
+		st[i].num = m;
+		st[i].result = num1 * m;
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = i+1; j < n; j++) {
+			if (st[i].result < st[j].result) {
+				ttmp = st[i];
+				st[i] = st[j];
+				st[j] = ttmp;
+			}
 		}
 	}
-	else{
-		for (int i = 0; i < m; i++) {
-			tmp = i;
-			for (int j = i + 1; j < m; j++) {
-				if (num[tmp] > num[j]) tmp = j;
-			}
-			if (tmp == i) continue;
-			n = num[tmp];
-			num[tmp] = num[i];
-			num[i] = n;
-		}
+	for (int i = 0; i < n; i++) {
+		printf("%s \n", st[i].name);
 	}
-	n = 0;
-	tmp = 0;
-	printf("%d\n", m);
-	for (int i = 0; i < m; i++) {
-		printf("%d ", num[i]);
-		if (num[i] % 2 == 1) n++;
-		else n = 0;
-		if (n > tmp) tmp = n;
-	}
-	printf("\n%d", tmp);
+	for (int i = 0; i < n; i++) {
+		free(st[i].name);
+	}	
+	free(st);
+
+	return 0;
 }
