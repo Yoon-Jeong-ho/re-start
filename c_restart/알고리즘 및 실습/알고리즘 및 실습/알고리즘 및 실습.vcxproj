@@ -132,6 +132,7 @@
     <ClCompile Include="병합정렬.c" />
     <ClCompile Include="사전.c" />
     <ClCompile Include="퀵정렬.c" />
+    <ClCompile Include="해쉬.c" />
     <ClCompile Include="힙.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

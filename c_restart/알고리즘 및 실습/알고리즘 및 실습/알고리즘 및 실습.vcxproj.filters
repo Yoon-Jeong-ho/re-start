@@ -33,5 +33,8 @@
     <ClCompile Include="AVL트리.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="해쉬.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
