@@ -6,21 +6,28 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     //@Autowired private DiscountPolicy discountPolicy; // 이렇게도 가능하다. 필드 생성자 안쓴다.
 
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
+/*    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
-    } // 이게 생성자 주입
+    }*/ // 이게 생성자 주입
+/*    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository,@Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }*/ // fix와 rate 둘다 component 해놨을 경우 하나만 고를 수 있다.
 
     //private final DiscointPolicy discointPolicy = new FixDiscountPolicy();
     //private final DiscountPolicy discointPolicy = new RateDiscountPolicy();
