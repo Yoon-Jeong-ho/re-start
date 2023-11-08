@@ -36,5 +36,8 @@
     <ClCompile Include="해쉬.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="그래프.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="2주차.c" />
     <ClCompile Include="AVL트리.c" />
+    <ClCompile Include="그래프.c" />
     <ClCompile Include="병합정렬.c" />
     <ClCompile Include="사전.c" />
     <ClCompile Include="퀵정렬.c" />
