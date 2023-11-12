@@ -1,3 +1,11 @@
 ﻿  14주차.c
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(28,8): warning C4101: 'tmpi' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(26,3): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(27,40): warning C4013: 'strlen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(28,3): warning C4013: 'strcpy'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(30,8): warning C4013: 'strncmp'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(20,9): warning C4101: 'm' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(20,21): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(20,24): warning C4101: 'b' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(22,30): warning C4101: 'ttmp' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\c프로그래밍실습\14주차.c(21,9): warning C4101: 'dd' :참조되지 않은 지역 변수입니다.
   c프로그래밍실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\c프로그래밍실습\x64\Debug\c프로그래밍실습.exe
