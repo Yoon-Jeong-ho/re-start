@@ -10,3 +10,9 @@ $$|\vec{F}_{spr}| = k_s(|\vec{l}| - l_0)$$
 $$\hat{F}_{spr} = -\hat{l}$$
 #### 다 붙이면
 $$\vec{F}_{spr} = - k_s(|\vec{l}| - l_0)\hat{l}$$
+
+# 부력
+## 아르키메데스의 원리
+$$\vec{F}_{buoy} = {\rho}Vg\hat{y} $$
+$$\vec{F}_{grav} = -mg\hat{y} $$
+

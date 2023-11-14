@@ -7,9 +7,11 @@
 //#include <Windows.h>
 
 int main_124() {
-	int n, * num, tmp;
+	int n, *** num, tmp;
 	scanf("%d", &n);
-	num = (int*)malloc(sizeof(int) * n);
+	num = (int**)malloc(sizeof(int*) * n);
+	num[1] = (int*)malloc(sizeof(int) * n);
+	num[1][2]= &n;
 	for (int i = 0; i < n; i++) scanf("%d", &num[i]);
 	for (int i = 1; i < n; i++) {
 		for (int j = i; j > 0; j--) {
