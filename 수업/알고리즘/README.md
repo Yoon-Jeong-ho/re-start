@@ -600,6 +600,197 @@ Alg searchAndFixAfterRemoval(w)
 - AVL 트리에 대한 갱신은 높이 균형 속성을 파괴할 수 있다. 트리에 대한 개조 작업을 통해 높이균형 속성을 회복할 수 있으며 삽입 후의 개조 작업은 O(1) 시간에, 삭제 후의 개조 작업은 $O(\log{n})$시간에 수행한다.
 - AVL 트리로 구현된 사전의 주요 메쏘드들은 모두 $O(\log{n})$ 시간에 수행한다.
 
+## 연습문제
+### D를 이진탐색트리로 구현된 n 항목의 순서사전이라고 가정하자. D를 위한 다음의 메쏘드를 O(n) 시간에 수행하도록 구현하라.
+- elements(): 이진탐색트리로 구현된 사전 D의 모든 원소들을 반환
+그냥 선,중,후위순회로 돌아다니면 끝인거 아녀?
+```
+Alg elements()
+
+1. L = empty list
+2. rElements(T.root(),L)
+3. return L.elements()
+
+
+Alg rElements(v,L)
+
+1. if(T.isExternal(v))
+    return
+2. L.addLast(T.element(v))
+3. rElements(T.leftChild(v),L)
+4. rElements(T.rightchild(v),L)
+```
+### 알고리즘 treeSearch(v,k)의 비재귀 버전을 의사코드로 작성하라
+제일 왼쪽에서 시작해서 올라가면서 왼쪽 오른쪽 다 보면서 가기...?
+```
+Alg treeSearch(v,k)
+
+1. while(isInternal(v)){
+    if(k == key(v))
+        return v
+    else if (k<key(v))
+        v = leftChild(v)
+    else {k > key(v)}
+        v = rightChild(v)
+}
+2. return v
+```
+전체를 보는게 아니라 찾는 것이었다.
+### 비어있는 이진탐색트리에 아래 키들을 가진 항목들을 주어진 순서대로 삽입한다. 
+- 키 : 30, 40, 24, 58, 48, 26, 11, 13  
+
+삽입이 수행될 때마다 변화하는 트리 모습을 보여라  
+30 가운데로 알아서 찢어지겄지
+
+### 중복 키를 가진 이진트리 응용문제에서 제시했던 탐색알고리즘 findAllElements의 다른버전을 의사코드로 작성하라.
+```
+Alg findAllElements(k)
+
+1. L = empty list
+2. w = T.root()
+3. while(T.isInternal(w)){
+    if(k == T.key(w)){
+        L.addLast(T.element(w))
+        w = T.rightChild(w)
+    }
+    else if (k<T.key(w))
+        w = T.leftChild(w)
+    else {k>T.key(w)}
+        w = T.rightChild(w)
+}
+return L.elements()
+```
+### 윤하는 이진탐색트리에 특정 집단의 키들을 삽입할 때 삽입 순서는 상관이 없다고 주장한다. 즉, 동일한 키 집단에 대해서는 동일한 이진탐색트리가 생성된다는 것이다. 윤하가 옳은지 그른지 논거와 함께 설명하라
+그르다. 시작 키에 따라 전혀 다른 트리가 나오기 때문이다.
+> 그르다. 그름을 보일 수 있는 사례는 하나만이 아니다. 일례로 먼저 키 9, 5, 12, 7, 13를 주어진 순서로 삽입하여 생성된 이진탐색트리를 만들어 보인다. 다음, 앞서의 입력에서 5와 7의 순서를 뒤바꿔서, 즉 9,7,12,5,13를 삽입하여 생성된 이진탐색트리를 만들어 보인다.
+
+### 윤하는 앞서 자신이 내세운 주장을 약간 수정했다. 이제 그녀는 이진탐색트리가 아니라 AVL 트리에 특정 집단의 키들을 삽입할 때 삽입 순서는 상관이 없다고 주장한다. 동일한 키 집단에 대해 동일한 AVL 트리가 생성된다는 것이다. 윤하가 옳은지 그른지 논거와 함께 설명하라.
+그르다. 불균형만 안만들고 트리를 만든다면 그 트리는 모양이 전혀 다르게 여러개가 나올 것 이기 때문이다.
+> 그르다. 그름을 보일 수 있는 사례는 하나만이 아니다. 일례로 먼저 키 9, 5, 12, 7, 13을 주어진 순서로 삽입하여 생성된 AVL트리를 만들어 보인다. 다음, 5와 7을 순서를 뒤바꿔서, 즉 키 9,7,12,5,13를 삽입하여 생성된 AVL트리를 만들어 보인다.
+
+### 비어 있는 AVL트리에 아래 키들을 가진 항목들을 주어진 순서대로 삽입한다. 삽입이 수행될 때마다 변화하는 트리 모습을 보여라
+- 키: 2, 1, 4, 5, 9, 3, 6, 7  
+
+### 배열로 표현된 n-노드 이진트리에서 회전을 수행하는데 n시간이 소요되는 이유를 설명하라
+뒤에 까지 다 봐야 해서?
+> 연결트리에서는 회전에 관여하는 부트리들의 루트만 재위치시키면 자손 노드들 까지 회전에 참여하게 된다. 하지만 배열로 표현된 n노드의 이진트리를 회전하기 위해서는 해당 노드들의 자손 노드들까지 재배치시켜야 한다. 따라서 n시간이 소요된다.
+
+### 다음 AVL 트리 관련 알고리즘을 의사코드로 작성하라
+- searchAndFixAfterInsertion  - $\log{n}$
+- searchAndFixAfterRemoval- $\log{n}$
+- restructure- $\log{1}$
+```
+Alg searchAndFixAfterInsertion(w)
+
+1. w.left.height, w.right.height, w.height = 0,0,1
+2. if(isRoot(w))
+    return
+3. z = w.parent
+4. while(updateHeight(z)&& isBalanced(z)){
+    if(isRoot(z))
+        return
+    z = parent(z)
+}
+5. if(isBalanced(z))
+    return
+6. if(z.left.height > z.right.height)
+    y = z.left
+   else {z.left.height < z.right.height}
+    y=z.right
+7. if(y.left.height > y.right.height)
+    x = y.left
+   else {y.left.height<y.right.height}
+    x = y.right
+8. restructure(x,y,z)
+9. return
+
+
+Alg searchAndFixAfterRemovel(z)
+
+1. while (updateHeight(z)&& izBalanced(z)){
+    if(isRoot(z))
+        return
+    z = parent(z)
+}
+2. if(isBalanced(z))
+    return
+3. if(z.left.height > z.right.height)
+    y = z.left
+   else {z.left.height < z.right.height}
+    y=z.right
+4. if(y.left.height > y.right.height)
+    x = y.left
+   else if (y.left.height<y.right.height)
+    x = y.right
+   else {y.left.height == y.right.height}{
+    if(z.left==y)
+        x = y.left
+    else {z.right = y}
+        x = y.right
+   }
+5. b = restructure(x,y,z)
+6. if (isRoot(b))
+    return
+7. searchAndFixAfterRemoval(b.parent)
+
+
+Alg restructure(x,y,z)
+
+1. if(key(z)<key(y)<key(x)){ - 자식으로 가면서 오른쪽으로 밀리는 그래프
+    a,b,c = z,y,x - 작은 순서대로 abc
+    t0,t1,t2,t3 = a.left,b.left,c.left,c.right - t는 작은 순서대로
+}
+   else if (key(x)<key(y)<key(z)){ - 왼쪽으로 밀리는 그래프
+    a,b,c = x,y,z
+    t0,t1,t2,t3 = a.left,a.right,b.right,c.right
+   }
+   else if (key(z)<key(x)<key(y)){
+    a,b,c = z,x,y
+    t0,t1,t2,t3 = a.left,b.left,b.right,c.right
+   }
+   else {key(y)<key(x)<key(z)} {
+    a,b,c = y,x,z
+    t0,t1,t2,t3 = a.left,b.left,b.right,c.right
+   }
+2. if (isRoot(z)){   - 가장 위에 b 만들기
+    root = b
+    b.parent = NULL
+}
+   else if (z.parent.left = z){
+    z.parent.left = b
+    b.parent = z.parent
+   }
+   else {z.parent.left ==z} {
+    z.parent.right = b
+    b.parent = z.parent
+   }
+3. a.left, a.right = t0,t1 - a 밑에 완성시키기
+4. t0.parent, t1.parent = a
+5. updateHeight(a) - a완성시키기
+6. c.left, c.right = t2,t3 - c밑에 완성시키기
+7. t2.parent, t3.parent = c
+8. updateHeight(c)
+9. b.left, b.right = a,c - b 밑에 완성시키기
+10. a.parent,c.parent = b
+11. updateHeight(b)
+12. return b
+
+
+Alg updateHeight(w)
+
+1. h = max(w.left.height, w.right.height) +1
+2. if (h!= w.height){
+    w.height = h
+    return Treu
+}
+   else
+    return False
+
+
+Alg isBalanced(w)
+
+1. return |w.left.height - w.right.height|<2
+```
 
 # 해시테이블
 ## 해시함수
@@ -750,6 +941,54 @@ $\alpha$<= 0.5로 유지하면 O($\alpha$)= O(1) 기대실행시간에 수행한
 - 해시 함수는 보통 해시 코드 맵과 압축맵 두 함수의 복합체로 명세된다.
 - 상이한 두 개의 키가 동일한 해시 테이블 주소로 매핑되면 충돌이 일어났다고 말한다. 충돌 해결을 위한 전략으로는 크게 분리연쇄법과 개방주소법 두 가지가 있다.
 - 해시테이블의 적재율 $\alpha$는 n/m으로 정의된다. 다시 말해 적재율은 좋은 해시함수를 사용할 경우 각 버켓의 기대 크기를 말한다. 주요 작업의 효율을 위해 적재율은 낮게 유지되어야 한다.
+## 연습문제
+### 아래 주어진 키를 해시테이블 A[0..M-1], M =11 에 해시함수  h(k) = (2k + 5)%M 을 사용하여 해싱한 결과를 보여라
+- 키(주어진 순서로): 12,44,13,88,23,94,11,39,20,16,5  
+충돌이 다음 전략에 의해 해결된다고 가정하고 각각의 경우에 대해 답하라
+- 분리 연쇄법 : 리스트
+- 선형 조사법 : 옆에 옆에
+- 2차 조사법 :a[(h(k)+f(i))%m], f(i) = $i^2$ , i = 0,1,2,3,4,5,,
+- 이중해싱,h'(k) = t-(k%7)을 사용하라 : a[(h(k)+f(i))%m], f(i) = $i^2*h'(k)$ , i = 0,1,2,3,4,5,,,,, 
+### 아래의 해시테이블을 새로운 해시함수 h(k)= 2k%m 을 사용하여 크기 M = 19의 테이블로 재해싱한 결과를 보여라 13,1,15,28,16,31,7,20,25
+
+### 해시함수$h_A$를 사용하는 크기 $M_A$의 기존 해시테이블 A로부터, 새로운 해시함수 $h_B$를 사용하는 크기 $M_B$의 새로운 해시테이블 B로 재해싱을 수행하는 알고리즘을 의사코드로 작성하라. -분리연쇄법
+하나씩 빼서 만들면 되는 것 아닌가...?
+```
+Alg rehash()
+
+1. for i = 0 to M_A-1
+    while(!A[i].isEmpty())
+        B.insertItem(key(A[i]),element(A[i]))
+2. return
+```
+### 해시함수$h_A$를 사용하는 크기 $M_A$의 기존 해시테이블 A로부터, 새로운 해시함수 $h_B$를 사용하는 크기 $M_B$의 새로운 해시테이블 B로 재해싱을 수행하는 알고리즘을 의사코드로 작성하라. - 개방주소법
+```
+Alg rehash()
+
+1. for i = 0 to M_A-1
+    while(!A[i].isEmpty())
+        B.insertItem(key(A[i]),element(A[i]))
+2. return
+```
+### m개의 슬롯, 즉 셀을 가진 개방주소법에 의한 해시테이블에 단 한개의 키 k가 저장되어 있고, 나머지 슬롯은 모두 비어있다. k가 아닌 다양한 키로 해시테이블을 r번 탐색한다고 하자. 홍도는 좋은 해시 함수를 사용한다고 전제하면 r번의 탐색을 수행하는 과정에서 k를 저장한 유일한 슬롯을 조사할 확률은 r/m이라고 주장한다. 홍도의 주장이 옳은지 그른지 논거와 함께 설명하라.
+이것도 힙이랑 똑같지 로그로 간디. 제곱해주라 $r^2/m$
+> 그르다. 이유는 다음과 같다. 어떤 키에 대한 탐색이 유일한 키 k가 있는 슬롯과 충돌하지 않을 확률은 (1 - 1/m)이다. 따라서 r번의 탐색 가운데 하나라도 유일한 키 k가 있는 슬롯과 충돌할 확률p는, r번의 탐색 모두가 그 슬롯과 충돌하지 않을 확률을 1에서 뺀 것과 같다. 따라서 p = 1 - $(1 - 1/m)^r$
+
+### S를 n개의 정수로 이루어진 집합이라 하자. 윤복은 임의의 정수 x가 S에 속하는지 여부를 O(1) 최악실행시간에 결정하도록 지원하는 데이터구조를 설계할 수 있다고 주장한다. 윤복의 주장이 옳은지 그른지 논거와 함께 설명하라.
+메모리를 많이 사용하면 O(1)시간에 가능하다.
+> 옳다. 조은 해시함수를 사용하는 해시테이블로 가능하다.
+
+### 정은이는 동적인 집합 S를 유지하며 insertItem, removeElement,member 작업을 각각 O(1) 기대시간에 수행할 수 있는 데이터구조가 있다고 주장한다. 정은이가 옳은지 그른지 논거와 함께 설명하라.
+이것도 좋은 해시함수를 사용하는 해시테이블로 가능한거 아니야?
+> 옳다. 좋은 해시함수를 사용하는 해시테이블로 가능하다.
+
+### 김찬은 키 수 보다 슬롯 수가 더 많은 해시테이블에서 분리연쇄법으로 해싱을 수행할경우 최악의 탐색시간이 상수시간이라고 주장한다. 김찬의 주장이 옳은지 그른지 논거와 함께 설명하라.
+분리연쇄법 = 리스트로 쭉 이어버리기 이다. 즉 좋지 않은 해시함수를 사용하면 한줄로 쭉 이어진 리스트가 만들어질 수 있고 이것은 O(n)시간이 나올 것이다.
+> 그르다. 최악의 경우 모든 키가 동일한 슬롯으로 해시될 수 있으며 이에 따른 탐색은 O(n) 시간이 소요된다.
+
+### M = 2r(r >1은 정수)로 전제한다. 해시함수 h(k) = k%M을 사용하여 키 k를 M개의 슬롯 가운데 하나로 매핑한다. 이 해시함수가 좋지 않은 이유를 하나만 대라.
+고르게 분포되지 않는다.
+> 키가 모두 짝수라면 홀수 슬롯은 전혀 사용하지 않게 된다. 키의 이진수 표현의 낮은 차수의 r 비트만을 취하므로 키의 분포가 r보다 낮은 차수의 비트들은 같고 r 보다 높은 차수의 비트가 상이한 경우 키들이 모두 동일한 슬롯으로 해시되기 때문이다.
 
 # 그래프
 ## 그래프 ADT
@@ -872,6 +1111,134 @@ G의 신장 부그래프(spanningn subgraph)는 G의 모든 정점을 포함하�
 - 그래프 내 모든 정점의 차수의 합은 간선 수의 2배다. 또한 루프와 병렬간선이 없는 무방향그래프에서 m<=n(n-1)/2다.
 - 그래프에서 부분집합, 연결성, 밀집도, 싸이클, 신장 등의 개념은 알고리즘 이해와 작성을 위해 중요하다.
 - 그래프 ADT를 컴퓨터에 구현하는 데는 간선리스트 구조, 인접리스트 구조, 그리고 인접행렬 구조를 사용하는 세가지 방식이 있다. 간선리스트 구조는 이 가운데 가장 단순한 구조로써, 여기에 데이터구조를 선택적으로 추가함에 따라 다른 두가지의 실전적인 구현 방식이 파생된다.
+## 연습문제
+### 무방향그래프와 관련된 method만을 가지며 갱신 메쏘드를 포함하지 않는, 단순화한 그래프 ADT를 그림 13-14(그래프 ADT의 연결리스트 구현)에 보인 것처럼 연결리스트를 사용하여 구현하기 위해 다음 A,B 두 가지 경우 각각에 대해 다음 메쏘드 들을 의사코드로 작성하라.
+- integer deg(v): 정점 v의 차수를 반환
+- vertex opposite(v,e): 정점 v의 간선 e에 대한 반대쪽 끝점을 반환
+- boolean areAdjacent(v,w): 정점 v와 w가 인접한지 여부를 반환
+- iterator adjacentVertices(v): 정점 v의 인접정점을 모두 반환
+- iterator incidentEdges(v): 정점 v의 부착간선을 모두 반환
+#### 그래프가 인접 리스트 구조로 표현됨
+```
+Alg deg(v)              $O(deg(v))$
+
+1. c= 0
+2. e = (v.incidentEdges).next
+3. while(e != NULL){
+    c++;
+    e++;
+}
+4. return e;
+
+
+Alg opposite(v,e)           $O(1)$
+
+1. w,v= e.endpoints
+2. if (v==u) return w
+   else return u
+
+
+Alg areAdjacent(v,w)   $O(min(deg(v),deg(w)))$
+
+1. if(deg(v)<deg(w))
+    m= v
+   else
+    m=w
+2. e = (m.incidentEdges).next
+3. while( e!= NULL){
+    a,b = e.endpoints
+    if((v==a)&&(w==b) || (v==b)&&(w==a))
+        return True
+    e = e.next
+}
+4. return False
+
+
+Alg adjacentVertices(v)        $O(deg(v))$
+
+1. L = empty list
+2. e = (v.incidentEdges).next
+3. while(e != NULL){
+    L.addLast(opposite(v,e))
+    e = e.next
+}
+4. return L.elements()
+
+
+Alg incidentEndges(v)       $O(deg(v))$
+
+1. L = empty list
+2. e = (v.incidentEdges).next
+3. while(e!= NULL){
+    L.addLast(e)
+    e = e.next
+}
+4. return L.elements()
+
+```
+#### 그래프가 인접 행렬 구조로 표현됨
+```
+Alg deg(v)              $O(n)$
+
+1. c = 0
+2. vi = index(v)
+3. for j = 0 to n-1
+    if(A[vi,j]!= NULL)
+        c ++
+4. return c
+
+
+Alg opposite(v,e)           $O(1)$
+
+1. w,v= e.endpoints
+2. if (v==u) return w
+   else return u
+
+
+Alg areAdjacent(v,w)   $O(1)$
+
+1. return A[index(v),index(w)]!= NULL
+
+
+Alg adjacentVertices(v)        $O(n)$
+
+1. L = empty list
+2. vi = index(v)
+3. for j = 0 to n-1
+    if(A[vi,j] != NULL)
+        L.addLast(opposite(v,A[vi,j]))
+3. return L.elements()
+
+
+Alg incidentEndges(v)       $O(n)$
+
+1. L = empty list
+2. vi = index(v)
+3. for j = 0 to n -1
+    if(A[vi,j]!=NULL)
+        L.addLast(A[vi,j])
+4. return L.elements()
+
+```
+### 12개의 정점과 18개의 간선으로 이루어지고 3개의 연결요소를 가진 단순 무방향그래프 G를 그려라. 위에서 만약 G가 18개가 아닌 66개의 간선으로 이루어졌다면 G를 그리는 것이 불가능한 이유를 설명하라
+4개의 정점을 가진 3개의 연결요소가 각각 22개의 간선을 가지는 것 or 10개의 정점을 가진 1개의 연결요소와 아무와도 연결되지 않은 정점 1개를 가진 2개의 연결요소 일 경우 66개의 간선을 가질 수 없다. 를 논리적으로 설명해야 하는데 흠...
+> G가 66개의 간선으로는 이루어질 수 없다. G가 12개의 정점과 3개의 연결요소로 이루어졌다면 G가 가질 수 있는 최대 간선수는 45개이다. 이는 10개의 정점으로(따라서 45개의 간선을 가짐) 이루어진 완건 연결요소와 각각 단일 정점으로 이루어진 두 개의 연결요소로 이루어지 경우다.    
+
+아 최대 간선 수는 n(n-1)/2였다...
+### G를 n개의 정점과 m개의 간선으로 이루어진 단순 연결그래프라 하자. 왜 $O(\log{m}) = O(\log{n})$ 인지 설명하라
+단순연결그래프면 m<= n(n-1)/2 이기 때문이다.
+> m<= n(n-1)/2며 이는 $O(n^2)$이다. 따라서 $O(\log{m}) =O(\log{n^2})=O(2\log{n})= O(\log{n})$
+
+## 심층문제
+### n개의 정점과 m개의 간선으로 이루어진 그래프 G를 간선리스트 구조로 표현한다고 가정한다. 이 경우 왜 insertVertex 메쏘드는 $O(1)$시간에 수행되지만 removeVertex 메쏘드는 $O(m)$시간에 수행되는가?
+간선을 찾고 만드는데 시간이 오래 걸리기 때문에...? 삽입시에는 만들어서 제일 앞에 넣으면 되기 때문에
+- GPT
+> insertVertex 메서드 (시간 복잡도: O(1)):
+새 정점을 추가하는 작업은 그래프의 간선 리스트 구조에 직접적인 영향을 주지 않습니다. 새 정점이 추가되면, 이 정점의 간선 리스트는 초기에 비어 있으며, 이를 그래프의 정점 배열에 추가하는 것은 단순한 작업입니다.
+새 정점을 추가할 때, 기존의 간선 리스트를 수정하거나 탐색할 필요가 없기 때문에, 이 작업은 상수 시간((1)O(1))에 수행됩니다.  
+removeVertex 메서드 (시간 복잡도:O(m)):정점을 제거할 때, 그 정점에 연결된 모든 간선을 찾아서 제거해야 합니다. 이는 그래프 내의 다른 모든 정점의 간선 리스트를 확인하고, 제거하려는 정점과 연결된 간선을 찾아서 삭제해야 하는 작업을 포함합니다. 간선 리스트 구조에서 특정 정점과 연결된 모든 간선을 찾기 위해서는 그래프의 모든 간선을 순회해야 할 수 있습니다. 그래프에 총 m개의 간선이 있다면, 최악의 경우 모든 간선을 검사해야 하므로, 이 작업의 시간 복잡도는 O(m)이 됩니다.
+각 정점의 간선 리스트에서 해당 정점을 지우는 작업도 포함되어야 하며, 이는 추가적인 시간을 요구할 수 있습니다.  
+결론적으로, insertVertex는 단순히 새로운 정점을 추가하는 작업이므로 상수 시간이 소요되지만, removeVertex는 그래프의 모든 간선을 확인하고 수정해야 하기 때문에 시간 복잡도가 O(m)이 됩니다. 이는 간선 리스트 구조에서 간선의 수에 직접적으로 영향을 받는 작업이기 때문입니다.
 
 # 그래프 순회
 그래프 내 모든 정점과 간선을 검사함으로써 그래프를 탐험하는 체계적인 절차
@@ -977,3 +1344,57 @@ Alg BFS1(G,v)
 - 너비우선탐색은 그래프를 순회하기 위한 일반적인 기법이다. 너비우선탐색은 이진트리에 대한 레벨순회와 유사한 양식으로 순회를 진행한다.
 - 정점 v를 출발정점으로 한 너비우선탐색에 의해 방문된 간선들은 v의 연결요소의 신장트리를 형성한다. 이를 너비우선트리라고도 한다.
 - 그래프가 인접리스트로 표현된 경우 깊이우선탐색과 너비우선탐색 모두 O(m+n) 시간에 수행한다.
+
+## 연습문제
+### 그래프 G의 정점은 1에서 8까지의 정수고 각 정점의 인접정점들은 아래 테이블에 나열된대로다. G를 순회할 때 주어진 정점의 인접정점들이 테이블에 나열된 순서와 동일한 순서로 반환된다고 가정하고 다음에 답해라
+| 정점 | 인접정점들 | 
+|:----:|:-----:|
+| 1 | 2,3,4 |
+| 2 | 1,3,4 |
+| 3 | 1,2,4 |
+| 4 | 1,2,3,6 |
+| 5 | 6,7,8 |
+| 6 | 4,5,7 |
+| 7 | 5,6,8 |
+| 8 | 5,7 |
+#### 그래프 G를 그려라
+
+#### 정점 1에서 출발하는 DFS순회에서 정점들이 방문되는 순서를 구하라
+1 - 2 - 3 - 4 - 6 - 5 - 7 - 8
+#### 정점 1에서 출발하는 BFS 순회에서 정점들이 방문되는 순서를 구하라
+1 - 2 - 3 - 4 - 6 - 5 - 7 - 8
+
+### 인접행렬 구조로 표현된 n-정점 단순그래프에서 DFS 순회가 $O(n^2)$시간에 수행하는 이유를 설명하여라
+
+모든 정점을 두 번씩 방문하기 때문이다.  
+> 정점과 간선의 라벨을 쓰고 읽는데 $O(1)$ 시간이 소요한다. 이는 정점이나 간선을 구현하는 노드가 Fresj, Visited, Tree, Back 등의 값을 저장하는 라벨을 가지도록 각 노드의 데이터구조를 확장하면 가능하다. 각 정점은 두 번 라벨된다. 한 번은 Fresh로, 또 한번은 Visited로 라벨된다. 각 간선 역시 두 번 라벨된다. 한 번은 Fresh로, 또 한 번은 Tree 또는 Back으로 라벨된다. 알고리즘 rDFS에서 수행하는 메쏘드 incidentEdges는 각 정점에 대해 한 번 호출된다. 그래프가 인접행렬로 표현된 경우 한 번 호출에 $O(n)$ 시간을 소요하며 $\sum_v{n} = n^2$이므로 명령문 2행은 총 $O(n^2)$ 시간에 수행한다. 그러므로 그래프가 인접행렬로 표현된 경우 DFS는 $O(n^2)$ 시간에 수행한다.
+
+### 꺽정은 방향그래프 G에 대한 DFS 순회를 수행한 결과로 얻은 DFS 숲에서 동일한 DFS트리 내의 두 정점 a와 b에 대한 방문 시각이 t(a)<t(b) , 즉 a를 b보다 먼저 방문한 것으로 나타났다면 해당 DFS 트리에서 a는 b의 조상임을 의미한다고 주장한다. 꺽정의 주장이 옳은지 그른지 논거와 함께 설명하라.
+
+DFS는 계속 가다가 갈 곳이 없으면 이전의 지나친 길 중에서 안간 길로 다시 가기 시작한다. 그러므로 항상 a가 b의 조상은 아니다. 형제일 경우도 있고, 이모와 같이 v가 더 위일 수 있다.
+> 다르다. 이유는 세개의 정점 s,a,b와 두 개의 간선 (s,a),(s,b)만이 존재하는 그래프에서 s를 출발정점으로 하는 DFS순회로 얻은 DFS트리에서 a와 v는 형제(siblings)가 된다. 그러므로 어느 정점도 다른 정점의 조상이 아니다. 
+### DFS 순회 알고리즘의 비재귀적 버전을 작성하라
+정점에 다른 길이 있었다면 리스트의 마지막에 넣어두고, 갈 길이 없다면 마지막에서 하나씩 빼서 쓴다.
+```
+Alg DFS1(G,v)
+
+1. S = empty stack
+2. S.push(v)
+3. while(!S.isEmpty()){
+    v = S.pop()
+    l(v) = Visted
+    for each e ∈ G.incidentEdges(v){
+        if(l(e)== Fresh){
+            w = G.opposite(v,e)
+            if(l(w)==Fresh){
+                l(e) = Tree
+                S.push(w)
+            }
+            else
+                l(e) = back
+        }
+    }
+
+}
+4. return
+```

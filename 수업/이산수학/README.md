@@ -252,3 +252,105 @@ A B 위치 바꾸기
 양방향만 존재
 ### 반대칭 관계
 단방향만 존재
+
+# 함수 (funcation : f: A ${\rightarrow}$ B)
+집합 A에서 B로 가는 관계가 성립할 때, 집합 A의 원소 a에 대하여 집합 B의 원소 b 하나가 대응되는 관계
+### 원상
+집합 B의 원소 b와 대응하는 집합 A의 원소 a
+### 상
+원소 A의 원소 a에 대응하는 집합 B의 원소 b
+### 정의역(dom(f))
+원상의 집합, 집합 A
+### 공역(codom(f))
+상이 포함된 집합, 집합 B
+### 치역(ran(f))
+상의 집합, 집합 B의 부분집합, ran(f) ={f(a)|a $\in$ A}
+
+### 관계
+집합 A에서 집합 B로의 관계  
+집합 A(정의역)의 어떤 원소는 집합 B(공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다.
+### 함수
+집합 A(정의역)의 모든 원소는 집합 B(공역)의 원소 하나와 반드시 대응해야 한다.
+- 관계가 좀 더 넓다.
+## 함수의 성질
+### 단사함수(injective function)
+함수 f:X $\rightarrow$ Y가 있을 때, 임이의 두 정의역 원소 $x_1,x_2 \in X$에 대하여 $x_1 != x_2$이면 $f(x_1)!= f(x_2)$ 인 함수  
+즉 모이면 안된다.
+- |dom(f)| <= |codom(f)|
+- |ran(f)|<= |codom(f)|
+- |dom(f)| = |ran(f)|
+### 전사함수 (surjective function)
+함수 f:X $\rightarrow$ Y가 있을 때, 모든 공역 원소 $y \in Y$에 대하여 $f(x) = y$인 정의역 원소 $x\in X$가 적어도 하나 이상 존재하는 함수   
+즉 공역의 모든 원소가 선택받았다. = 겹쳐도 된다.
+- |dom(f)|>= |codom(f)|
+- |ran(f)| = |codom(f)|
+
+### 전단사함수(bijective function)
+단사함수이면서 전사함수인 함수  
+즉 겹치지 않으면서 모두 선택하는 1대1 대응인 함수
+- |dom(f)| = |codom(f)|
+- |ran(f)| = |codom(f)|
+
+## 합성함수
+### 합성함수(composite function:$g \circ f$)
+두 함수 $f : A \rightarrow B$ 와 $g:B \rightarrow C$ 가 있을 때, 집합 A의 각 원소를 집합 C의 원소에 대응하는 함수  
+순서 주위 !!!!!
+- $g \circ f = (g \circ f)(x) = g(f(x)), x\in A$
+### 성질
+- f와 g가 단사함수이면 g $\circ$ f 도 단사함수이다.
+- f와 g가 전사함수이면, g $\circ$ f 도 전사함수이다.
+- f와 g가 전단사함수이면, g $\circ$ f도 전단사함수이다.
+- g $\circ$ f가 단사함수이면, f도 단사함수이다.
+- g $\circ$ f 가 전사함수이면, g도 전사함수이다.
+- g $\circ$ f가 전단사함수이면, f는 단사함수이고, g는 전사함수이다. 
+
+## 함수의 종류
+### 항등함수(identity function : $I_A$)
+집합 A에 대한 함수 f: A $\rightarrow$ A가 f(a)= a로 정의되는 관계
+- 함수의 정의역, 공역, 치역 모두 상등, 단전사 함수
+### 역함수(inverse function: $f^{-1}$)
+전단사 함수 f:$ A \rightarrow B$에 대해 $ B \rightarrow A$로 대응되는 관계. $a \in A, b \in B$에 대해 f(a) = b일 때, $f^{-1}(b) \ a$  (f(a): 가역함수, $f^{-1}(b) :$ 역함수)
+- 가역함수 f의 정의역 = 역함수 $f^{-1}$ 의 공역
+- 가역함수 f의 공역 = 역함수 $f^{-1}$의 정의역
+- 단사함수이거나 전사함수인 경우, 역함수를 구할 수 없음
+### 합성함수의 역함수
+$$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$$
+### 상수함수(constant function)
+함수 f:$A \rightarrow B$에서 집합 A의 모든 원소가 집합 B의 원소 하나에만 대응하는 관계  
+$\forall a \in A, \exist b \in B$에 대해 f(a) = b
+ ### 특성함수(characteristic function: $f_A$)
+ 전체집합 U의 부분집합인 A에 대하여 당므과 같은 출력을 갖는 함수  
+ $f_A(x) = 1, x\in A$ or $0, x\notin A$
+ ### 바닥함수(floor function : $\lfloor x \rfloor$)/ 최대정수함수
+$x \in R$에 대해 x보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수  
+즉 내림  
+$$\lfloor x \rfloor = n \leftrightarrow n <= x < n+1, n \in Z$$
+### 천정함수(ceiling function : $\lceil x \rceil$ ) / 최소정수함수
+$x \in R$에 대해 x보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수  
+즉 올림
+$$\lceil x \rceil = n \leftrightarrow n-1 < x <= n , n \in Z$$
+
+# 그래프
+
+## 그래프 개념 (graph : G = (V,E))
+공집합이 아닌 정점(vertex, node)의 집합 V와 서로 다른 정점의 쌍$(v_i,v_j)$를 연결하는 변(edge)의 집합 E로 구성된 구조
+- 정점 $v_i$ 와 $v_j$는 서로 인접(adjacent)한다. : 정점 $v_i$ 와 $v_j$를 연결하는 변이 존재한다.
+- 변 $e_k$는 정점 $v_i$ 와 $v_j$에 근접(incident)한다. : 변 $e_k$는 정점 $v_i$ 와 $v_j$를 연결한다.
+### 단순 그래프(simple graph)
+그래프 G= (V,E)에서 임의의 두 정점 사이에 오직 하나의 변이 있는 그래프  
+0개도 가능하다.
+### 다중 그래프(multi-graph)
+그래프 G= (V,E)에서 임의의 두 정점 사이에 두 개 이상의 변이 있는 그래프
+### 방향그래프 (directed graph : G = <V,E>)
+그래프를 구성하는 정점 사이에 순서가 존재하여 화살표를 이용해 순서대로 정점을 연결하여 표현하는 그래프
+### 가중치그래프(weighted graph)
+그래프 G=(V,E)를 구성하는 각 변에 가중치가 부여된 그래프
+- W[$ v_i,v_j$] : 두 정점 $ v_i$와 $v_j$에 근접하는 변에 부여된 가중치 표기
+### 차수 (degree: d(v))
+정점 v에 근접하는 변의 개수
+- 외차수(out-degree: $d_{out}(v)$) : 정점 v를 시작점으로 하는 화살표의 개수/ 진출차수
+- 내차수(in-degree: $d_{in}(v)$) : 정점 v를 끝점으로 하는 화살표 개수/ 진입 차수
+### 차수에 대한 정리
+- 그래프 G = (V,E)에서 모든 정점의 사수의 합은 변의 개수의 2배이다.
+$$\sum_{v\in V}d(v) = 2|E| $$
+- 그래프 G=(V,E)
