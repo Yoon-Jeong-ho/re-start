@@ -5,87 +5,128 @@
 #include<string.h>
 #include<time.h>
 #define max(x, y) ((x) > (y) ? (x) : (y))
-typedef struct Edge {
-	int fresh;
-	int vertex1, verxtex2;
-}Edge;
-typedef struct Vertex {
+
+typedef struct vertices {
 	int num;
+	struct edgelist* list;
 	int fresh;
-}Vertex;
+	char name;
+	int out;
+}vertices;
 
-typedef struct Graph {
-	Vertex* v;
-	Edge* e;
-	int** adfacencyMatrix;
-}Graph;
+typedef struct edgelist {
 
-void insert(Graph*, int, int,int );
-void initGraph(Graph*, int, int);
-void BFS(Graph*, int, int, int);
+	struct edgelist* next;
+	int edge_num;
+	int ver_num;
+}edgelist;
+
+typedef struct edge {
+	int fresh;
+	int ver1, ver2;
+}edge;
+typedef struct graph {
+	vertices* vertex;
+	edge* edg;
+	int edgnum;
+}graph;
+void grpinit(graph*, int, int,char*);
+void insert(graph*, char, char, int);
+
+
 int main() {
-	Graph grp;
-	char c;
-	int ver1, ver2, weight;
+	graph grp;
+	char tmp[1000],st,ed;
+	int ver1, ver2, weight, count = 0,c = 0;
+	edgelist* list = NULL;
 	int n, m, s, a, b;
-	scanf("%d %d %d", &n, &m, &s);
-	grp.e = (Edge*)malloc(sizeof(Edge) * (m + 1));
-	grp.v = (Vertex*)malloc(sizeof(Vertex) * (n + 1));
-	initGraph(&grp, n, m);
+	scanf("%d", &n); getchar();
+	for (int i = 0; i < n; i++) {
+		scanf("%c", &tmp[i]); getchar();
+	}
+	scanf("%d", &m); getchar();
+	grp.vertex = (vertices*)malloc(sizeof(vertices) * (n + 1));
+	grp.edg = (edge*)malloc(sizeof(edge) * (m + 1));
+	grpinit(&grp, n, m,tmp);
 
 	for (int i = 0; i < m; i++) {
-		scanf("%d %d", &a, &b);
-		insert(&grp, a, b, i);
+		scanf("%c %c", &st,&ed); getchar();
+		insert(&grp, st, ed , n);
 	}
-	BFS(&grp, n,m,s);
-	return 0;
-}
-void insert(Graph* g, int n, int m, int w) {
-	g->e[w].vertex1 = n;
-	g->e[w].verxtex2 = m;
-	g->e[w].fresh = 0;
-	g->adfacencyMatrix[n - 1][m - 1] = 0;
-	g->adfacencyMatrix[m - 1][n - 1] = 0;
-
-}
-
-void initGraph(Graph* g, int n, int m) {
-	for (int i = 0; i < n; i++) {
-		g->v[i].num = i + 1;
-		g->v[i].fresh = 0;
-	}
-	for (int i = 0; i < m; i++) g->e[i].fresh = 0;
-	g->adfacencyMatrix = (int**)malloc(sizeof(int*) * n);
-	for (int i = 0; i < n; i++) {
-		g->adfacencyMatrix[i] = (int*)malloc(sizeof(int) * n);
-		for (int j = 0; j < n; j++) {
-			g->adfacencyMatrix[i][j] = -1;
+	for (int i = 1; i <= n; i++) {
+		if (grp.vertex[i].num == 0) break;
+		if (i == n) {
+			printf("0\n"); return 0;
 		}
-
 	}
-}
-void BFS(Graph* g, int n, int m, int s) {
-	int* temp;
-	temp = (int*)malloc(sizeof(int) * n);
-	int cnt = 0;
-	int currentCnt = 0;
-	memset(temp, 0, sizeof(int) * n);
-	temp[cnt] = s;
-	cnt++;
-	g->v[s - 1].fresh = 1;
-	printf("%d\n", s);
-	while (currentCnt < n) {
-		for (int i = 0; i < n; i++) {
-			if(temp[currentCnt]!= 0)
-				if (g->adfacencyMatrix[temp[currentCnt]-1][i] != -1) {
-					if (g->v[i].fresh == 0) {
-						g->v[i].fresh = 1;
-						temp[cnt] = i + 1;
-						cnt++;
-						printf("%d\n", g->v[i].num);
-					}
+	for (int i = 1; i <= n; i++) {
+		if (grp.vertex[i].num == 0) {
+			tmp[count++] = i;
+		}
+	}
+	while (c < n) {
+		list = grp.vertex[tmp[c]].list;
+		for (int i = 0; i < grp.vertex[tmp[c]].out; i++) {
+			//printf("지우는 중\n");
+			list = list->next;
+			grp.vertex[list->ver_num].num = grp.vertex[list->ver_num].num -1;
+			//printf("%d %d\n", list->ver_num,grp.vertex[list->ver_num].num);
+			if (grp.vertex[list->ver_num].num == 0) tmp[count++] = list->ver_num;
+			else if (grp.vertex[list->ver_num].num < 0) {
+				printf("0\n"); return 0;
 			}
 		}
-		currentCnt++;
+		c++;
 	}
+	if (count != n) { printf("0\n"); return 0; }
+	for (int i = 0; i < n; i++)printf("%c ", grp.vertex[tmp[i]].name);
+	return 0;
+}
+
+
+
+void grpinit(graph* g, int n, int m, char* name) {
+	for (int i = 1; i <= n; i++) {
+		g->vertex[i].num = 0;
+		g->vertex[i].list = (edgelist*)malloc(sizeof(edgelist));
+		g->vertex[i].list->next = NULL;
+		g->vertex[i].list->edge_num = 0;
+		g->vertex[i].list->ver_num = 0;
+		g->vertex[i].fresh = 0;
+		g->vertex[i].name = name[i - 1];
+		g->vertex[i].out = 0;
+	}
+	g->edgnum = 1;
+}
+
+void insert(graph* grp, char st, char en, int we) {
+	vertices* v1= NULL, * v2 = NULL;
+	int a = 0;
+	for (int i = 1; i <= we; i++) {
+		if (grp->vertex[i].name == st) {
+			v1 = &(grp->vertex[i]);
+		}
+		if (grp->vertex[i].name == en) {
+			v2 = &(grp->vertex[i]);
+			a = i;
+		}
+	}
+	edgelist* list1 = v1->list, * list2 = v2->list, * tmp = NULL, * prev = NULL;
+	prev = list1;
+	list1 = list1->next;
+	v1->out = v1->out +1;
+	tmp = (edgelist*)malloc(sizeof(edgelist));
+	tmp->next = list1;
+	prev->next = tmp;
+
+	tmp->ver_num = a;
+	tmp->edge_num = grp->edgnum;
+	v2->num= v2->num +1;
+
+	grp->edg[grp->edgnum].ver1 = st;
+	grp->edg[grp->edgnum].ver2 = en;
+	grp->edg[grp->edgnum].fresh = 0;
+
+	grp->edgnum = grp->edgnum + 1;
+
 }
