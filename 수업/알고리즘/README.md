@@ -1471,3 +1471,277 @@ Alg DFS1(G,v)
 }
 4. return
 ```
+
+# 방향 그래프
+모든 간선이 방향 간선인 그래프
+### 속성과 구현
+진입간선(in-edge)와 진출간선(out-edge)들을 별도의 부착리스트로 보관한다면 진입간선의 집합과 진출간선의 집합을 각각의 크기에 비례한 시간에 순회할 수 있다.  
+### 방향 DFS 간선(v,w)
+- 트리간선 : w가 v의 자식이다.
+- 후향간선 : w가 v의 조상이다.
+- 전향간선 : w가 v의 자손이다.
+- 교차간선 : w가 v와 동일하 레벨 또는 직계가 아닌 다음 레벨에 위치한다.
+### 강연결성
+정점 u와 v에서 서로 도달 가능하다면 강연결 그래프라고 한다.
+#### 강연결 검사
+1. G의 임의의 정점 v를 선택
+2. G의 v로부터 DFS를 수행
+- 방문되지 않은 정점 w가 있다면 False를 반환
+3. G의 간선들을 모두 역행시킨 그래프 G'을 얻음
+4. G'의 v로부터 DFS를 수행
+- 방문되지 않은 정점 w가 있다면 False를 반환
+- 그렇지 않으면 True를 반환  
+두 번의 DFS를 수행하므로 O(m+n)시간 소요
+#### 강연결요소
+각 정점으로부터 다른 모든 정점으로 도달할 수 있는 최대의 부 그래프
+### 이행적 패쇄
+- G*는 G와 동일한 정점들로 구성된다.
+- G에 u로부터 v != u로의 방향경로가 존재한다면, G*에 u로부터 v로의 방향간선이 존재한다.  
+즉 거쳐서 가는 길이 있다면 한번에 가는 길을 만들어 놓은 것이 G*이다.
+#### Floyd-Warshall
+그래프의 각 정점에서 DFS를 수행한 결과를 종합하여 보여주므로 O(n(m+n))시간이 소요된다.  
+1. 정점들을 1,2,....n으로 번호를 매긴다.
+2. 1,2,...,k로 번호 매겨진 정점들만 경유 정점으로 사용하는 경로들을 고려한다.
+```
+Alg Floyd-Warshall(G)
+
+1.Let v1,v2,...,vn be an arbitrary numbering of the vertices of G
+2. G0 = G
+3. for k = 1 to n
+    Gk = G(k-1)
+    for i = 1 to n, i != k
+        for j = 1 to n,j != i,k
+            if(G(k-1).areAdjacent(vi,vk) && G(k-1).areAdjacent(vk,vj))
+                if(!Gk.areAdjacemt(vi,vj))
+                    Gk.insertDirectedEdge(vi,vj,k)
+4. return Gn
+```
+
+## 동적 프로그래밍
+- 부문제 단속성 : 부 문제들이 몇개의 기본 변수로 정의될 수 있음
+- 부 문제 최적성: 전체 최적치가 최적의 부문제들에 의해 정의될 수 있음.
+- 부 문제 중복성: 부 문제들이 독립적이 아니라 상호 겹쳐짐(따라서 해결을 "상향식"으로 구축할 필요가 있음)
+### 공통점
+문제공간 : 원점 - 목표점 구조
+- 원점 : 문제의 초기 또는 기초 지점(복수 개수 가능)
+- 목표점 : 최종해가 요구되는 지점(보통 1개)
+- 추상적 개념 상의 두 지점
+### 차이점
+동적 프로그래밍 (단방향): 원점 -> 목표점
+분할통치(양방향) : 목표점 -> 원점 -> 목표점
+### 성능
+- 동적 프로그래밍: 단방향 특성 때문에 종종 효율적
+- 분할 통치: 분할 회수, 중복연산 수행 회수
+
+## 방향 비 싸이클 그래프 DAG
+싸이클식 참조가 없도록 정의된 그래프
+### DAG와 위상 정렬
+#### 위상 순서
+모든 i<j인 간선(vi,vj)에 대해 정점들을 번호로 나열한 것
+- 방향그래프가 DAG면 위상순서를 가지며 그 역도 참이다.  
+#### 위상 정렬
+DAG로부터 위상순서를 얻는 절차
+```
+Alg topologicalSort(G)
+
+1. Q = empty queue
+2. for each u to G.vertices()
+    in(u) = inDegree(u)
+    if(in(u)= 0)
+        Q.enqueue(u)
+3. i = 1
+4. while(!Q.isEmpty()){
+    u = Q.dequeue()
+    Label u with topological number i
+    i++
+    for each e to G.outIncidentEdges(u){
+        w = G.opposite(u,e)
+        in(w) = in(w)-1
+        if(in(w)= 0)
+            Q.enqueue(W)
+    }
+}
+5. if (i <= n)
+    write("G has a directed cycle")
+6. return
+```
+
+1. 0인걸 큐에 다 넣기
+2. 0에서 나가는 간선의 반대편 전부 1씩 빼주기
+3. 빼줬을 때 0이면 큐에 넣기
+4. 무한 반복
+
+```
+Alg topologicalSortDFS(G)
+
+1. n = G.numVertices()
+2. for each u to G.vertices()
+    l(u) = Fresh
+3. for each v to G.vertices(){
+    if(l(v) = Fresh)
+        rTopologicalSortDFS(G,v)
+}
+
+
+Alg rTopologicalSortDFS(G,v)
+
+1. l(v)= Visited
+2. for each e to G.outIncidentEdges(v){
+    w = opposite(v,e)
+    if(l(w) = Fresh)
+        rTopologicalSortDFS(G,w)
+    else if w is not labeled with a topological number
+        write("G has a directed cycle")
+    else
+        e is a nontree edge
+}
+3. Label v with topological number b
+4. n--
+```
+1. Fresh 면 계속 가
+2. 갈 곳 없으면 라벨 붙여
+3. 직전 정점으로 돌아가서 반복
+
+# 최소 신장 트리
+## 가중그래프
+각 간선이 무게라 불리는 수치값을 가진다.
+## 최소 신장 트리
+신장 부그래프란 그래프 G의 모든 정점들을 포함하는 부그래프를 말하며 신장트리는 (자유) 트리인 신장 부그래프를 말한다. 가중그래프 G의 최소신장트리MST는 G의 신장트리 가운데 간선 무게의 합이 최소인 것을 말한다.
+### 최소 신장 트리의 속성
+#### 싸이클 속성
+T를 가중그래프 G의 최소신장트리라 하자. e를 T에 존재하지 않는 G의 간선으로 e를 T에 추가하여 형성된 싸이클을 C로 가정하자. 그러면 C의 모든 간선 f에 대해 weight(f)<= weight(e)이다.
+- 싸이클에서 가장 큰 숫자를 안써야 최소 신장 트리가 되기 때문이다.
+#### 분할 속성
+G의 정점들을 두 개의 부분집합 U와 V로 분할한다고 하자. e를 분할을 가로지르는 최소 무게의 간선이라고 하자. 그러면 간선 e를 포함하는 G의 최소신장트리가 반드시 존재한다.
+- 분할할 땐 가장 작은 숫자를 써야 최소 신장 트리가 되기 때문이다.
+## 탐욕법
+- 구성: 다양한 선택, 모음, 또는 찾아야 할 값들
+- 목표: 구성에 할당된 점수가 존재하며 이를 최대화 또는 최소화해야 하는 상황
+## 최소 신장트리 알고리즘
+### prime-Jarnik 알고리즘
+임의의 정점 s를 택하여 s로부터 시작하여 정점들을 배낭에 넣어가며 배낭안에서 MST를 키워나가는 것.
+- 거리: d(v)
+- 위치자: 우선순위 큐에서의 v의 위치
+- 부모: p(v), MST T(루트)에서 v의 부모를 향한 간선
+- Q.replaceKey(e,k): 원수e의 키를 k로 변경하고 우선순위 큐 Q내의 e의 위치를 갱신
+```
+Alg Prime-JarnikMST(G)
+
+1. for each v to G.vertices(){
+    d(v) = INF
+    p(v) = NULL
+}
+2. s = a vertex of G
+3. d(s) = 0
+4. Q = a priority queue contaning all the vertices of G using d labels as keys
+5. while(!Q.isEmpty){
+    u = Q.removeMin()
+    for each e to G.incidentEdges(u)
+        z = G.opposite(u,e)
+        if((z in Q)&(w(u,z)<d(z))){
+            d(z) = w(u,z)
+            p(z) = e
+            Q.replaceKey(z,w(u,z))
+        }
+}
+```
+
+1. 모든 정점의 거리를 무한으로 두고, 부모도 NULL로 둔다.
+2. 아무 정점이나 잡아서 그 거리를 0으로 두고 모든 정점들을 큐에 넣는다.
+3. 큐에서 가장 작은 값을 꺼내서 거기서 갈 수 있는 모든 정점들 중 큐에 존재하고, 거리가 갱신하는 것 보다 크다면 거리를 새롭게 갱신하고 큐를 재조정한다.
+4. 큐가 빌때 까지 3번을 반복한다.
+
+#### 알고리즘 분석
+incidentEdges는 각 정점에 대해 한번 씩 호출되고, 라벨 관련 작업은 O(deg(z))가 소모된다. Q를 힙으로 구현할 경우 삽입과 삭제는 각각 O(log n)시간이 소요된다. Q 내의 정점 w의 키는 최대 deg(w)번 변경된다. 각 키 변경은 O(log n)시간이 소요된다.
+그러므로 알고리즘은 O((n+m)logn) 시간에 수행한다. 단순 연결 그래프에서 n = O(m)이므로 이를 O(mlog n)으로 단순화할 수 있따.
+
+### Kruskal 알고리즘
+각 정점을 각각의 배낭으로 두고, 두 배낭을 합칠 때 가장 작은 간선을 선택하는 식으로 키워가는 것이다. G의 정점 수 n보다 하나 작은 수의 간선을 배낭에 포함할 때까지 반복한다. 반복이 완료되면 MST T를 포함하는 한개의 배낭만 남는다.
+
+```
+Alg KurskalMST(G)
+
+1. for each v to G.vertices()
+    define a Sack(v) = {v}
+2. Q = a priority queue contaning all the edges of G using weights as keys
+3. T = NULL
+4. while(T has fewer than n-1 edges){
+    (u,v) = Q.removeMin()
+    if(Sack(u)!= Sack(v)){
+        Add edge(u,v) to T
+        Merge Sack(u) and Sack(v)
+    }
+}
+5. return T
+```
+
+1. 모든 정점을 각각의 sack로 둔다.
+2. Q에 전부 넣고 T는 NULL로 둔다.
+3. Q에서 최소를 뽑고 둘이 다른 sack이면 u,v를 T에 추가하고, sack를 합친다.
+4. T의 edge가 n-1보다 작은 동안 3을 반복한다.
+
+
+### BaruvKa 알고리즘
+```
+Alg BaruvkaMST(G)
+
+1. T = V
+2. while( T has fewer than n-1 edges){
+    for each connected component Ci in T{
+        Let edge e be the smallest-weight edge from Ci to anothor component in T
+        if(e is not already in T)
+            Add edge e to T
+    }
+}
+3. return T
+```
+
+### MST 알고리즘 비교
+
+| 알고리즘 | 주요 전략 | 실행시간 |외부 데이터 구조 | 
+|:----:|:-----:|:-----:|:-----:|
+| PrimeJamik| 탐욕법 | $O(mlogn)$|정점들을 저장하기 위한 우선순위 큐 |
+| Kruskal| 탐욕법 | $O(mlogn)$|간선들을 저장하기 위한 우선순위 큐</br> 배낭들을 구현하기 위한 분리집합 |
+| PrimeJamik| 탐욕법 | $O(mlogn)$|정점들을 저장하기 위한 우선순위 큐 |
+
+
+# 최단 경로
+### 최단 경로 속성
+- 최단경로의 부분경로 역시 최단경로다.
+출발정점으로부터 다른 모든 정점에 이르는 최단경로들의 트리가 존재한다. 이를 단일점 최단경로라고 부른다.
+### 음의 무게를 가지는 간선과 싸이클
+가중 방향, 무방향 그래프에 음의 무게를 가진 싸이클이 존재한다면 최단경로는 존재하지 않는다.
+
+| 그래프 | 알고리즘 | 시간 | 
+|:----:|:-----:|:-----:|
+| 음의 무게를 가진 간선이 없는 그래프| Dijstra | $O(mlogn) or O(n^2)$|
+| 음의 무게를 가진 간선이 있는 방향 그래프| bellman-Ford | $O(mn)|
+| 비가중그래프| BFS |$O(m+n)$|
+| DAG| 위상순서 | $O(m+n)$|
+## 최단경로 알고리즘
+### Dijkstra
+
+```
+Alg DijkstraShortestPaths(G,s)
+
+1. for each v to G.vertices()
+    d(v) = INF
+2. d(s) = 0
+3. Q = a priority queue contaning all the vertices of G using d labels as keys
+4. while(!Q.isEmpty()){
+    u = Q.removeMin()
+    for each e to G.incidentEdges(u){
+        z = G.opposite(u,e)
+        if(z in Q.elements()){
+            if(d(u)+ w(u,z)<d(z)){
+                d(Z) = d(u) + w(u,z)
+                Q.replaceKey(z,d(z))
+            }
+        }
+    }
+}
+
+```
+
+1. 여기서도 거리 다 무한으로 놓고 하나 뽑아서 0으로 두며, Q에 정점 전부 넣는다.
+2. Q가 빌때까지 Q에서 가장 작은 값을 꺼내서 모든 인접 정점을 Q에 있는지 확인 후 거리를 계산하고, 거리가 짧으면 거리를 업데이트 후에 Q를 재정렬한다.(간선완화)
