@@ -132,6 +132,7 @@
     <ClCompile Include="그래프.c" />
     <ClCompile Include="병합정렬.c" />
     <ClCompile Include="사전.c" />
+    <ClCompile Include="최단경로.c" />
     <ClCompile Include="퀵정렬.c" />
     <ClCompile Include="해쉬.c" />
     <ClCompile Include="힙.c" />

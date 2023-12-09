@@ -1,10 +1,1 @@
-﻿  그래프.c
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\그래프.c(7,1): warning C4005: 'max': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\stdlib.h(1282,1): message : 'max'의 이전 정의를 참조하십시오.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\그래프.c(40,12): warning C4101: 'ver2' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\그래프.c(42,15): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\그래프.c(42,18): warning C4101: 'b' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\그래프.c(40,18): warning C4101: 'weight' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\그래프.c(42,12): warning C4101: 's' :참조되지 않은 지역 변수입니다.
-C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\알고리즘 및 실습\그래프.c(40,6): warning C4101: 'ver1' :참조되지 않은 지역 변수입니다.
-  알고리즘 및 실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\x64\Debug\알고리즘 및 실습.exe
+﻿  알고리즘 및 실습.vcxproj -> C:\Users\aa007\OneDrive\문서\re-start\c_restart\알고리즘 및 실습\x64\Debug\알고리즘 및 실습.exe
