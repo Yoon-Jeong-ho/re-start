@@ -75,7 +75,7 @@ ball.pos = ball.pos + ball.v * dt
 ### 바람이 불면?
 wind_speed = 5  
 wind_v = wind_speed*vec(1,0,0)   
-ball.v_w = ball.v - wind_v
+ball.v_w = ball.v - wind_v  
 dag_wind = -0.5 * rho * Cd * (pi * ball.radius ** 2) * mag(ball.v_w) ** 2 * norm(ball.v_w)  
 
 # 8주차
@@ -136,10 +136,11 @@ Fnet = Fgrav + Fspr + Fdamp
 ## 부력
 물 위로 뜨려는 힘  
 중력 == 부력일시 가만히 있는다.
-## 아르키메데스의 원리
-$$\vec{F}_{buoy} = {\rho}Vg\hat{y} $$
-$$\vec{F}_{grav} = -mg\hat{y} $$
-$$\vec{F}_{drag} = -0.5C_d \rho Av^2\hat{v}$$
+## 아르키메데스의 원리   
+
+$$\vec{F}_{buoy} = {\rho}Vg\hat{y} $$  
+$$\vec{F}_{grav} = -mg\hat{y} $$  
+$$\vec{F}_{drag} = -0.5C_d \rho Av^2\hat{v}$$   
 
 ### 코드로 구현하기
 wood.rho = 500  
