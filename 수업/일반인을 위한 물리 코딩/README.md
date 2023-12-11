@@ -139,7 +139,9 @@ Fnet = Fgrav + Fspr + Fdamp
 ## 아르키메데스의 원리   
 
 $$\vec{F}_{buoy} = {\rho}Vg\hat{y} $$  
+
 $$\vec{F}_{grav} = -mg\hat{y} $$  
+
 $$\vec{F}_{drag} = -0.5C_d \rho Av^2\hat{v}$$   
 
 ### 코드로 구현하기
