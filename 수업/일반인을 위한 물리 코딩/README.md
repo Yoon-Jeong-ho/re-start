@@ -38,8 +38,11 @@ ball.pos = ball.pos + ball.v*dt
 t = t + dt  
 # 4주차
 ## 만유인력
+
 $\vec{F}_{grav} = -G\frac{m_1m_2} {|\vec{r}|^2}\hat{r}$  
+
 만유인력 상수 $G = 6.67 * 10^{-11} Nm^2/kg^2$
+
 ### 만유인력을 통한 달의 힘 표시
 Moon.f = G* Earth.mass *Moon.mass/mag(r)^ 2 * norm(r)  
 Earth.f = Moon.f  
@@ -54,6 +57,7 @@ t = t+ dt
 
 # 6주차
 ## 축구공이 받는 힘
+
 $\vec{F_g} = -m_{ball}g\hat{r}$
 
 ### 공기저항력
@@ -175,13 +179,21 @@ def calc_im(pBox, pbox):
 # 12주차
 ## 일
 물체의 힘을 작용시켜 힘의 방향과 평행한 방향으로 이동시키는 것
+
 $$W = \vec{F} \delta\vec{r}$$
+
 ### 포텐셜 에너지
+
 $$U = mgh$$
+
 #### 중력에 의한 포텐셜 에너지
+
 $$U = -\frac{GMm}{r}$$
+
 ### 운동에너지
+
 $$ k = \frac{1}{2}mv^2$$
+
 K + U는 일정하다.
 
 ## 오일러 크로마 방식의 오류
@@ -194,25 +206,38 @@ K+ U > 0
 $$U = 0.5k_s(|\vec{l}|-l_0)^2$$
 
 # 13주차
+
 $$\vec{v_f} = \vec{v_i} + \frac{\vec{F}}{m}\delta{t}$$
+
 $$m\vec{v_f} = m\vec{v_i} + \vec{F}\delta{t}$$
+
 $$m\vec{v_f}-m\vec{v_i}  = \vec{F}\delta{t} = \vec{J}$$
+
 충격량 : $\vec{F}\delta{t}$  
 
 ## 반발계수
 물체의 충돌 전 후 상대 속력의 비율
+
 $$e = -\frac{v_{1,f}-v_{2,f}}{v_{1,i} - v_{2,i}}$$
+
 - e == 1 완전 탄성 충돌 : 충돌 시 에너지 손실 없음
+
 - 0 < e < 1 비탄성 충돌 : 충돌 후 두 물체의 상대 속력 줄어듦
 - e == 0 완전 비탄성 충돌 : 에너지 손실 최대 발생
 ### 운동량 보존 법칙 충돌 전후로 같다.
+
 $$m_1v_{1,i}+m_2v_{2,i} == m_1v_{1,f}+m_2v_{2,f}$$
 
 ## 물체의 충돌
+
 $$m_1v_{1,f} - m_1v_{1,i} = j\hat{n}$$
+
 $$m_2v_{2,f} - m_2v_{2,i} = -j\hat{n}$$
+
 $$e = -\frac{(v_{1,f}-v_{2,f})\hat{n}}{(v_{1,i} - v_{2,i})\hat{n}}$$
+
 $$j = - \frac{(1+e)(v_{1,i}+v_{2,i})\hat{n}}{\frac{1}{m_1}+\frac{1}{m_2}}$$
+
 ### 충돌 시 코드
 j = -(1+e) * v_relm  
 j = j / (1/b1.m + 1 / b2.m)  
@@ -222,26 +247,37 @@ b1.pos = b1.pos + n_hat * (tot_radius - dist) * b2.m / (t1.m + b2.m)
 b2.pos = b2.pos - n_hat * (tot_radius - dist) * b1.m / (t1.m + b2.m)  
 ## 마찰력
 물체와 물체가 닿으면 두 물체의 접촉면에서 물체의 운동을 방해하는 힘
+
 $$\vec{F_t} =- \mu|\vec{N}|\hat{v} $$
+
 - $\mu$ : 마찰계수 : 두 물체의 표면의 재질에 따라 다르다. 구름 마찰계수는 마찰계수보다 훨씬 작다.
 ### 표현
 ball1.f = - ball1.mu * ball1.m * g * norm(ball1.v)
 
 # 14주차
 ## 각속력
+
 $$\omega = \frac{\delta\theta}{\delta{t}}$$
+
 $$\theta = \omega{t}$$
+
 $$ v = r\omega$$
+
 ## 각 가속도
+
 $$\vec{\alpha} = \frac{\delta\vec{\omega}}{\delta{t}}$$
 
 $$\omega_{n+1} = \omega_n + \vec{\alpha_n}\delta{t}$$
+
 ## 회전 관성
 회전하는 물체의 각속도를 변화시키는 것이 얼마나 어려운지에 대한 척도
 
 ## 돌림힘
+
 $$\vec{\tau}= \vec{r} \vec{F}$$
 
 ## 각 운동량
+
 $$I\vec{\omega}$$
+
 회전관성(I)이 커지면 각속도가 느려진다.
