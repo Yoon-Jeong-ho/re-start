@@ -1913,3 +1913,258 @@ Alg DijkstraShortestPaths(G,s)
 - Dijkstra 최단경로 알고리즘은 탐욕법에 기초하며 음의 무게를 가진 간선이 없는 그래프에 적용된다. 음의 무게를 가진 간선이 존재하는 그래프에 적용할 경우 최단경로를 구한다는 보장이 없다.
 - 방향 비싸이클 그래프의 경우 Dijkstra나 Bellman-Ford 알고리즘보다 빨리 최단경로를 구하는 알고리즘이 있다. 이 알고리즘은 위상순서를 이용하며 DAG에 음의 무게를 가진 간선이 있더라도 정확히 작동한다.
 
+
+# 기말 요약
+
+## 퀵 기본 원리
+
+```
+1. lt, eq, gt = partition(l,k)
+2. quickSort(lt)
+3. quickSort(gt)
+
+partition(l,k)
+1. p = l.get(k)
+2. e = l.removeFirst
+3. if (e < p)
+    lt.addLast(e)
+else if(e==p)
+    eq.addLast(e)
+else {e>p}
+    gt.addLast(e)
+4.return lt,eq,gt
+
+inPlacePartition(a,l,r,k)
+1. p = a[k]
+2. a[k] swap a[r]
+3. i = l
+4. j = r-1
+5. while(i <= j){
+    while(i <= j && a[i] <= p)
+        i++
+    while(j >= i && a[j] >= p)
+        j++
+    if(i<j )
+        a[i] swap a[j]
+} 
+6. a[i] swap a[r]
+7. return i
+```
+
+## 탐색트리
+### 찾기
+1. 외부노드면 반환
+2. 키가 같으면 반환, 키가 작으면 오른쪽으로, 키가 크면 왼쪽으로 반환
+
+### 삭제
+1. w의 중위순위 계승자 y와 자식노드 z를 찾아낸다.
+2. y의 내용을 w에 복사한다.
+3. reduceExternal(z) 작업을 사용하여 노드 y와 z를 삭제한다.
+
+### 삽입 후 재조정
+1. w에서 루트 향해 올라가다가 처음 만나는 불균형 노드를 z
+2. 거기서 w로 가는 방향으로 y, x 두기.
+3. restruct(x,y,z)
+
+### 삭제 후 재조정
+삽입 후 재조정에서 위로 올라가서 계속 고친다.
+### restructure
+1. x,y,z 중위 순회 방문순서(크기순서) a,b,c라 둔다.
+2. 그 밑의 부트리들을 중위 순회 방문순서(크기 순서) t0, t1, t2, t3로 둔다.
+3. z를 루트로 하는 부트리를 b를 루트로 하는 부트리로 대체한다.
+4. b의 왼쪽 자식a, 오른쪽 자식 c로 두고, t0,t1,t2,t3를 각각 달아준다.
+
+## 그래프
+
+| 구현 방식 | 간선 리스트 | 인접 리스트 |인접 행렬 |
+|:----:|:-----:|:----:|:----:|
+| 기억장소 사용량 | n+m | n+m |$n^2$|
+| deg(v) | m | degree if v |n|
+| opposite(v,e) | m | 1 |1|
+| areAdjacent(v,w) | m | min(deg(v),deg(w)) |1|
+| adjacentVertices(v) | m | deg(v) |n|
+| incidentEdge(v) | m | deg(v) |n|
+| insertVertex(o) | 1 | 1 |n|
+| insertEdge(v,w,o) | 1 | 1 |1|
+| removeVertex(v) | m |deg(v) |n|
+| removeEdge(e) | 1 | 1 |1|
+
+
+### 그래프가 인접 리스트 구조로 표현됨
+
+```
+Alg deg(v)              $O(deg(v))$
+
+1. c= 0
+2. e = (v.incidentEdges).next
+3. while(e != NULL){
+    c++;
+    e++;
+}
+4. return e;
+
+
+Alg opposite(v,e)           $O(1)$
+
+1. w,v= e.endpoints
+2. if (v==u) return w
+   else return u
+
+
+Alg areAdjacent(v,w)   $O(min(deg(v),deg(w)))$
+
+1. if(deg(v)<deg(w))
+    m= v
+   else
+    m=w
+2. e = (m.incidentEdges).next
+3. while( e!= NULL){
+    a,b = e.endpoints
+    if((v==a)&&(w==b) || (v==b)&&(w==a))
+        return True
+    e = e.next
+}
+4. return False
+
+
+Alg adjacentVertices(v)        $O(deg(v))$
+
+1. L = empty list
+2. e = (v.incidentEdges).next
+3. while(e != NULL){
+    L.addLast(opposite(v,e))
+    e = e.next
+}
+4. return L.elements()
+
+
+Alg incidentEndges(v)       $O(deg(v))$
+
+1. L = empty list
+2. e = (v.incidentEdges).next
+3. while(e!= NULL){
+    L.addLast(e)
+    e = e.next
+}
+4. return L.elements()
+
+```
+
+
+### 그래프가 인접 행렬 구조로 표현됨
+
+```
+Alg deg(v)              $O(n)$
+
+1. c = 0
+2. vi = index(v)
+3. for j = 0 to n-1
+    if(A[vi,j]!= NULL)
+        c ++
+4. return c
+
+
+Alg opposite(v,e)           $O(1)$
+
+1. w,v= e.endpoints
+2. if (v==u) return w
+   else return u
+
+
+Alg areAdjacent(v,w)   $O(1)$
+
+1. return A[index(v),index(w)]!= NULL
+
+
+Alg adjacentVertices(v)        $O(n)$
+
+1. L = empty list
+2. vi = index(v)
+3. for j = 0 to n-1
+    if(A[vi,j] != NULL)
+        L.addLast(opposite(v,A[vi,j]))
+3. return L.elements()
+
+
+Alg incidentEndges(v)       $O(n)$
+
+1. L = empty list
+2. vi = index(v)
+3. for j = 0 to n -1
+    if(A[vi,j]!=NULL)
+        L.addLast(A[vi,j])
+4. return L.elements()
+
+```
+
+## 그래프 순회
+- DFS
+
+> Fresh가 있으면 계속 간다. 없으면 이전으로 돌아가서 Fresh 찾기 반복  
+O(n + m)시간  
+깊이 우선 신장트리를 형성  
+연결요소 내의 모든 정점과 간선을 방문한다.  
+
+- BFS
+
+> 리스트에 집어넣으면서 흩어지기  
+너비 우선 트리를 형성한다.  
+O(n+m)시간  
+
+## 방향그래프 (v,w)
+- 트리간선 : w가 v의 자식이다.
+- 후향간선 : w가 v의 조상이다.
+- 전향간선 : w가 v의 자손이다.
+- 교차간선 : w와 v가 형제이거나 부모가 다르다.
+- 강연결 : u->v도 가능, v->u도 가능
+- 이행적 폐쇄 : 거쳐서 가는건 한번에!
+
+### DAG
+- 위상순서 : 정점들을 번호로 나열한 것
+- 위상정렬 : DAG로부터 위상순서를 얻는 절차
+
+1. 모든 정점에 들어오는 간선을 카운트 해줘서 0인 것들을 Q에 넣는다.
+2. 큐에서 하나씩 빼서 i만큼 라벨해주고, 그 정점에서 나가는 간선이 들어가는 정점의 카운트를 한개씩 빼준다. 
+3. 그 정점의 카운트가 0이라면 큐에 넣어준다.
+
+- DFSDAG는 Fresh면 계속 가다가 갈 곳 없으면 라벨붙이고 돌아오기~
+
+## 최소신장트리
+- 신장 부그래프 : 모든 정점을 포함하는 부 그래프
+- 신장트리 : 트리인 신장 부그래프
+- 최소 신장 트리 : 신장트리 가운데 간선 무게의 합이 최소인 것
+- 분할 속성 : 분할할 땐 가장 작은 숫자를 써야 된다.
+- 싸이클 속성 : 싸이클에선 가장 큰 숫자를 안써야 최소 신장 트리가 된다.
+
+### 잔돈 거스르기
+- 탐욕법 : 제일 큰 동전으로 거슬러 준다.(32,8,1원인 경우)
+- 탐욕 X : 30,20,5,1인 경우
+
+### 부분적 배낭 문제 - 물건의 일부만 취해도 된다.
+- 탐욕법 사용 O
+
+### 0-1 배낭문제 - 물건 전체를 취해야 한다.
+- 탐욕법 사용 X
+
+### prime-Jarnik
+- 임의의 정점 s를 택하여 s로부터 시작하여 d(v)가 가장 작은 정점들을 배낭에서 빼면서 다른 배낭안에서 MST를 키워나가는 것.
+- O(mlogn)
+
+### Kruskal
+- 각각의 정점이 sack을 가지고 있다가 Q에서 가장 작은 간선을 꺼내고, 그 간선의 양쪽 정점이 다른 sack인 경우 그 둘을 합친다.
+
+### Baruvka
+- 각자 가장 작은 간선을 활용하여 주변 정점과 연결, 반복
+
+
+| 알고리즘 | 주요 전략 | 실행시간 |외부 데이터 구조 | 
+|:----:|:-----:|:-----:|:-----:|
+| PrimeJamik| 탐욕법 | $O(mlogn)$|정점들을 저장하기 위한 우선순위 큐 |
+| Kruskal| 탐욕법 | $O(mlogn)$|간선들을 저장하기 위한 우선순위 큐</br> 배낭들을 구현하기 위한 분리집합 |
+| Baruvka| 탐욕법 | $O(mlogn)$|정점들을 저장하기 위한 우선순위 큐 |
+
+## 최단경로
+- 출발 정점으로부터 다른 모든 정점에 이르는 최단경로들의 트리
+
+### Dijkstra
+- 하나 빼고 거리를 전부다 INF로 두고 Q에서 가장 작은 것만 빼서 거리를 계산 후, 그 계산한 값이 원래 값보다 작으면 갱신, 반복
