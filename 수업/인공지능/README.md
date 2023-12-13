@@ -77,3 +77,60 @@ Softmax는 Multiclass classfication문제에서 사용한다.
 num of(iteraters, layer, node, learning rate), type of (activation function, optimizer)
 ### Learnable parameters
 theta
+
+# CNN
+![Alt text](image-33.png)
+![Alt text](image-34.png)
+![Alt text](image-35.png)
+![Alt text](image-36.png)
+![Alt text](image-37.png)
+![Alt text](image-39.png)
+![Alt text](image-38.png)
+![Alt text](image-40.png)
+![Alt text](image-41.png)
+![Alt text](image-42.png)
+![Alt text](image-43.png)
+![Alt text](image-44.png)
+![Alt text](image-45.png)
+![Alt text](image-46.png)
+![Alt text](image-47.png)
+![Alt text](image-48.png)
+![Alt text](image-49.png)
+![Alt text](image-50.png)
+![Alt text](image-51.png)
+
+
+
+# CAM
+판단내리는 데 중요한 곳을 강조 = 설명 가능한 DNN
+![Alt text](image-52.png)
+![Alt text](image-53.png)
+
+
+# Autoencoder
+![Alt text](image-54.png)
+![Alt text](image-55.png)
+![Alt text](image-56.png)
+![Alt text](image-57.png)
+![Alt text](image-58.png)
+![Alt text](image-59.png)
+![Alt text](image-60.png)
+![Alt text](image-61.png)
+![Alt text](image-62.png)
+![Alt text](image-63.png)
+![Alt text](image-64.png)
+![Alt text](image-65.png)
+![Alt text](image-66.png)
+![Alt text](image-67.png)
+![Alt text](image-68.png)
+
+# segmentation, object detection
+
+![Alt text](image-69.png)
+![Alt text](image-70.png)
+![Alt text](image-71.png)
+![Alt text](image-72.png)
+![Alt text](image-73.png)
+![Alt text](image-74.png)
+![Alt text](image-75.png)
+

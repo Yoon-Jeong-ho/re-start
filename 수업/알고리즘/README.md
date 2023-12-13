@@ -1,10 +1,13 @@
 # 힙
 ### 힙 순서
+
 ```key(v) >= ket(parent(v)) ```
+
 ### 힙 높이
 $\log{n}$
 ## 힙을 이용한 우선 순위 큐 구현
 ### 힙 삽입
+
 ```
 Alg insertItem(k)
 
@@ -25,7 +28,9 @@ Alg upHeap(v)
 3. swapElements(v,parent(v))
 4. upHeap(parent(v))
 ```
+
 ### 힙 삭제
+
 ```
 Alg removeMin()
 
@@ -74,6 +79,7 @@ Alg reduceExternal(z)
 ```
 
 ### 마지막 노드 갱신
+
 ```
 Alg advancelast
 1. 현재 노드가 오른쪽 자식인 동한 부모 노드로 이동한다. 
@@ -148,6 +154,7 @@ Alg downHeap(i,last)
 heapSort의 속도를 높일 수 있다.
 
 #### 재귀적 상향식 힙 생성
+
 ```
 Alg buildHeap(l)
 
@@ -192,6 +199,7 @@ Alg buildHeap(a)
 - 가장 깊은 내부 노드 가운데 하나
 - 외부 노드 바로 위의 내부노드 가운데 하나 
 >유일키: 최대키가 유일이면 제일 밑에 저장
+
 ### 힙과 이진트리 순회
 #### 7개의 유일한 원소(1, 2, 3, 4, 5, 6, 7)를 저장하는 힙 T를 다음 방식으로 순회할 경우 T의 원소들이 정렬 순서로 얻어지는 T가 존재할 수 있을까? 있다면 각각의 T의 예를 들어라
 - 선위순회 O
@@ -205,6 +213,7 @@ Alg buildHeap(a)
 3. 합치면서 각각의 문제를 해결한다.
 
 ## 합병 정렬
+
 ```
 Alg mergeSort(l)
 
