@@ -133,4 +133,71 @@ theta
 ![Alt text](image-73.png)
 ![Alt text](image-74.png)
 ![Alt text](image-75.png)
+![Alt text](image-76.png)
+![Alt text](image-77.png)
+![Alt text](image-78.png)
+![Alt text](image-79.png)
+
+# GAN
+![Alt text](image-80.png)
+![Alt text](image-81.png)
+![Alt text](image-82.png)
+![Alt text](image-83.png)
+![Alt text](image-84.png)
+![Alt text](image-85.png)
+![Alt text](image-86.png)
+![Alt text](image-87.png)
+![Alt text](image-88.png)
+![Alt text](image-89.png)
+## 판별자 관점
+![Alt text](image-90.png)
+![Alt text](image-91.png)
+## 생성자 관점
+![Alt text](image-92.png)
+## 판별나 LOSS
+![Alt text](image-93.png)
+## 생성자 LOSS
+![Alt text](image-94.png)
+
+![Alt text](image-95.png)
+![Alt text](image-96.png)
+![Alt text](image-97.png)
+![Alt text](image-98.png)
+![Alt text](image-99.png)
+![Alt text](image-100.png)
+
+## RNN
+![Alt text](image-101.png)
+![Alt text](image-102.png)
+![Alt text](image-103.png)
+![Alt text](image-104.png)
+![Alt text](image-105.png)
+![Alt text](image-106.png)
+![Alt text](image-107.png)
+![Alt text](image-108.png)
+![Alt text](image-109.png)
+![Alt text](image-110.png)
+![Alt text](image-111.png)
+![Alt text](image-112.png)
+![Alt text](image-113.png)
+![Alt text](image-114.png)
+![Alt text](image-115.png)
+![Alt text](image-116.png)
+## LSTM
+![Alt text](image-117.png)
+![Alt text](image-118.png)
+![Alt text](image-119.png)
+![Alt text](image-120.png)
+![Alt text](image-121.png)
+![Alt text](image-122.png)
+![Alt text](image-123.png)
+![Alt text](image-124.png)
+![Alt text](image-125.png)
+### LSTM 단점
+![Alt text](image-126.png)
+![Alt text](image-127.png)
+![Alt text](image-128.png)
+
+
+
 
