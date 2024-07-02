@@ -1,0 +1,6 @@
+﻿  test.c
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\Project3\Project3\test.c(553,14): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\Project3\Project3\test.c(554,14): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\Project3\Project3\test.c(555,14): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\Project3\Project3\test.c(556,14): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Project3.vcxproj -> C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\Project3\x64\Debug\Project3.exe
