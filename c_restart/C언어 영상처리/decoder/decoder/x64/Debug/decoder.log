@@ -1,0 +1,5 @@
+﻿  19011268_Dec.c
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\decoder\19011268_Dec.c(15,28): warning C4101: 'bmpInfo2' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\decoder\19011268_Dec.c(22,162): warning C4101: 'max' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\decoder\19011268_Dec.c(14,28): warning C4101: 'bmpFile2' :참조되지 않은 지역 변수입니다.
+  decoder.vcxproj -> C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\decoder\x64\Debug\decoder.exe
