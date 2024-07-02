@@ -1,0 +1,38 @@
+from PIL import Image
+import numpy as np
+import math
+
+def calculate_psnr(img1, img2):
+    # Ensure the images have the same dimensions
+    assert img1.shape == img2.shape, "Images must have the same dimensions"
+
+    # Convert to grayscale if they are not
+    if len(img1.shape) == 3:
+        img1 = img1.mean(axis=2)
+    if len(img2.shape) == 3:
+        img2 = img2.mean(axis=2)
+
+    # Calculate mean squared error
+    mse = np.mean((img1 - img2) ** 2)
+
+    # Calculate PSNR
+    if mse == 0:
+        return float('inf')
+    PIXEL_MAX = 255.0
+    psnr = 20 * math.log10(PIXEL_MAX / math.sqrt(mse))
+    return psnr
+
+# Load images
+img1_path = "by.bmp"  # Replace with the actual path to your first image
+img2_path = "19011268.bmp"  # Replace with the actual path to your second image
+
+img1 = Image.open(img1_path)
+img2 = Image.open(img2_path)
+
+# Convert images to numpy arrays
+img1 = np.array(img1)
+img2 = np.array(img2)
+
+# Calculate PSNR
+psnr_value = calculate_psnr(img1, img2)
+print(f"PSNR: {psnr_value}")
