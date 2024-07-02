@@ -1,0 +1,7 @@
+﻿  start.c
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\imageProcessing\imageProcessing\start.c(63,161): warning C4101: 'max' :참조되지 않은 지역 변수입니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\imageProcessing\imageProcessing\start.c(708,14): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\imageProcessing\imageProcessing\start.c(709,14): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\imageProcessing\imageProcessing\start.c(710,14): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\imageProcessing\imageProcessing\start.c(711,14): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  imageProcessing.vcxproj -> C:\Users\aa007\OneDrive\바탕화~1-DESKTOP-L2TT5UE-48810543\수업\4-1\영상처리\imageProcessing\x64\Debug\imageProcessing.exe
