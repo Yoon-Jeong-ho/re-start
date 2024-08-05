@@ -1,0 +1,42 @@
+function BusActors = getBusActors(BusActors)
+    BusActors.Description = '';
+    BusActors.DataScope = 'Auto';
+    BusActors.HeaderFile = '';
+    BusActors.Alignment = -1;
+    saveVarsTmp{1} = Simulink.BusElement;
+    saveVarsTmp{1}.Name = 'NumActors';
+    saveVarsTmp{1}.Complexity = 'real';
+    saveVarsTmp{1}.Dimensions = [1 1];
+    saveVarsTmp{1}.DataType = 'double';
+    saveVarsTmp{1}.Min = [];
+    saveVarsTmp{1}.Max = [];
+    saveVarsTmp{1}.DimensionsMode = 'Fixed';
+    saveVarsTmp{1}.SamplingMode = 'Sample based';
+    saveVarsTmp{1}.DocUnits = '';
+    saveVarsTmp{1}.Description = '';
+    saveVarsTmp{1}(2, 1) = Simulink.BusElement;
+    saveVarsTmp{1}(2, 1).Name = 'Time';
+    saveVarsTmp{1}(2, 1).Complexity = 'real';
+    saveVarsTmp{1}(2, 1).Dimensions = [1 1];
+    saveVarsTmp{1}(2, 1).DataType = 'double';
+    saveVarsTmp{1}(2, 1).Min = [];
+    saveVarsTmp{1}(2, 1).Max = [];
+    saveVarsTmp{1}(2, 1).DimensionsMode = 'Fixed';
+    saveVarsTmp{1}(2, 1).SamplingMode = 'Sample based';
+    saveVarsTmp{1}(2, 1).DocUnits = '';
+    saveVarsTmp{1}(2, 1).Description = '';
+    saveVarsTmp{1}(3, 1) = Simulink.BusElement;
+    saveVarsTmp{1}(3, 1).Name = 'Actors';
+    saveVarsTmp{1}(3, 1).Complexity = 'real';
+    saveVarsTmp{1}(3, 1).Dimensions = [1 1];
+    saveVarsTmp{1}(3, 1).DataType = 'Bus: busActorsActors';
+    saveVarsTmp{1}(3, 1).Min = [];
+    saveVarsTmp{1}(3, 1).Max = [];
+    saveVarsTmp{1}(3, 1).DimensionsMode = 'Fixed';
+    saveVarsTmp{1}(3, 1).SamplingMode = 'Sample based';
+    saveVarsTmp{1}(3, 1).DocUnits = '';
+    saveVarsTmp{1}(3, 1).Description = '';
+    BusActors.Elements = saveVarsTmp{1};
+    clear saveVarsTmp;
+end
+
